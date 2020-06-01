@@ -1,0 +1,98 @@
+{
+"UCF_0": {
+    "name" : "UCF_deck",
+    "description" : "This model provides an online reference to the newly updated Universal Competency Framework (UCF).",
+    "referance" : "UCF_0",
+    "children" : {
+        "UCF_1.cc_0" : {
+            "name": "comptancy_cards",
+            "referance" : "UCF_1.cc_0",
+            "children" : {
+                "UCF_1.cc_0.f_1" : {
+                    "name" : "Leading and Deciding",
+                    "description" : "Takes control and exercises leadership, initiates action, gives direction and takes responsibility.",
+                    "referance" : "UCF_1.cc_0.f_1",
+                    "colour" : "#009FE3",
+                    "children" : {
+                        "UCF_1.cc_0.f_1.d_1":{
+                            "name" : "Decision Making",
+                            "description" : "Makes prompt decisions, even when they involve risk; makes difficult decisions, even when they involve tough choices; makes well-informed and considered decisions, and takes responsibility for results.",
+                            "referance" : "UCF_1.cc_0.f_1.d_1",
+                            "children" : {                     
+                                "UCF_1.cc_0.f_1.d_1.c_1" : {
+                                    "name" : "Makes quick decisions",
+                                    "code" : "1.1a",
+                                    "description" : "Acts quickly and makes timely decisions, even ones involving risk.",
+                                    "referance" : "UCF_1.cc_0.f_1.d_1.c_1",
+                                    "indicators" : [
+                                        "Decides on a course of action without unnecessary delay",
+                                        "Takes confident, decisive action in pressured situations",
+                                        "Is not inhibited by risk when making decisions"
+                                        ]
+                                    },
+                                "UCF_1.cc_0.f_1.d_1.c_2" : {
+                                    "name" : "Makes difficult decisions",
+                                    "code" : "1.1b",
+                                    "description" : "Makes difficult decisions and is not deterred by opposition.",
+                                    "referance" : "UCF_1.cc_0.f_1.d_1.c_2",
+                                    "indicators" : [
+                                        "Decides on a course of action without unnecessary delay",
+                                        "Takes confident, decisive action in pressured situations",
+                                        "Is not inhibited by risk when making decisions"
+                                        ]
+                                    },
+                                "UCF_1.cc_0.f_1.d_1.c_3" : {
+                                    "name" : "Makes considered decisions",
+                                    "code" : "1.1c",
+                                    "description" : "Makes informed and well-considered decisions.",
+                                    "referance" : "UCF_1.cc_0.f_1.d_1.c_3",
+                                    "indicators" : [
+                                        "Makes well-informed decisions after considering the relevant information",
+                                        "Minimizes risk by considering the uncertainties that are involved in a decision",
+                                        "Carefully considers all options before making a decision"
+                                        ]
+                                    },
+                                "UCF_1.cc_0.f_1.d_1.c_4" : {
+                                    "name" : "Takes responsibility",
+                                    "code" : "1.1d",
+                                    "description" : "Takes accountability for decisions made and accepts responsibility when things go wrong.",
+                                    "referance" : "UCF_1.cc_0.f_1.d_1.c_4",
+                                    "indicators" : [
+                                        "Takes accountability for decisions",
+                                        "Minimizes risk by considering the uncertainties that are involved in a decision",
+                                        "Accepts appropriate responsibility when things go wrong"
+                                        ]
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+        "UCF_2.sc_0" : {
+            "name" : "sortCards",
+            "referance" : "UCF_2.sc_0",
+            "children" : {
+                "UCF_2.sc_1.fs_0" : {
+                    "name" : "Frequency Sort",
+                    "referance" : "UCF_2.sc_1.fs_0",
+                    "children":{
+                        "UCF_2.sc_1.fs_1" : {
+                            "name" : "Frequently Demonstrated",
+                            "referance" : "UCF_2.sc_1.fs_1"
+                            },
+                        "UCF_2.sc_1.fs_2" : {
+                            "name" : "Sometimes Demonstrated",
+                            "referance" : "UCF_2.sc_1.fs_2"
+                            },
+                        "UUCF_2.sc_1.fs_3" : {
+                            "name" : "Seldom Demonstrated",
+                            "referance" : "UCF_2.sc_1.fs_3"
+                            }
+                        }
+                    }  
+                }
+            }
+        }
+    } 
+}

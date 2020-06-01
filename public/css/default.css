@@ -1,0 +1,44 @@
+body {
+  width: 100%;
+  height: 100%;
+}
+body #cardTemplate {
+  display: none;
+  width: 284px;
+  height: 213px;
+}
+body #workArea .cardBlock {
+  position: absolute;
+  width: 200px;
+  height: 100px;
+}
+body #workArea #dropZones {
+  position: relative;
+}
+body #workArea #dropZones artical {
+  width: 200px;
+  height: 100px;
+  border: 1px solid #000;
+}
+body #workArea #dropZones #sortArea artical {
+  position: absolute;
+  top: 200px;
+}
+body #workArea #dropZones #sortArea #sa1 {
+  left: 200px;
+}
+body #workArea #dropZones #sortArea #sa2 {
+  left: 400px;
+}
+body #workArea #dropZones #sortArea #sa3 {
+  left: 600px;
+}
+body #workArea #dropZones #cardArea {
+  position: absolute;
+  top: 400px;
+}
+body #workArea #dropZones #cardArea artical {
+  float: left;
+}
+
+/*# sourceMappingURL=default.css.map */

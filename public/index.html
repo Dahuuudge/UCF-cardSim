@@ -1,0 +1,48 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>UCF</title>
+    <link rel="stylesheet" href="css/default.css" />
+</head>
+
+<body>
+    <article class="cardBlock" id="cardTemplate" draggable="true" ondragstart="drag(event)" id="card" >
+        <svg width="200" height="100" id="card" >
+            <rect width="200" height="100" fill="grey" stroke="black" stroke-width="3"/>
+            <circle cx="50" cy="50" r="40" fill="blueviolet" />
+            <text class="title" x="20" y="20">Hello World</text>
+            <text class="text" x="20" y="45">Foo bar</text>
+        </svg>
+    </article>
+    
+    <section id="workArea" ondrop="drop(event)" ondragover="allowDrop(event)">
+        
+        <div id="dropZones">
+             <div id="sortArea">
+                <artical id="sa1" ondrop="drop(event)" ondragover="allowDrop(event)"></artical>
+                <artical id="sa2" ondrop="drop(event)" ondragover="allowDrop(event)"></artical>
+                <artical id="sa3" ondrop="drop(event)" ondragover="allowDrop(event)"></artical>
+
+             </div>
+
+             <div id="cardArea">
+                <artical ondrop="drop(event)" ondragover="allowDrop(event)"></artical>
+                <artical ondrop="drop(event)" ondragover="allowDrop(event)"></artical>
+                <artical ondrop="drop(event)" ondragover="allowDrop(event)"></artical>
+                <artical ondrop="drop(event)" ondragover="allowDrop(event)"></artical>
+                <artical ondrop="drop(event)" ondragover="allowDrop(event)"></artical>
+                <artical ondrop="drop(event)" ondragover="allowDrop(event)"></artical>
+                <artical ondrop="drop(event)" ondragover="allowDrop(event)"></artical>
+                <artical ondrop="drop(event)" ondragover="allowDrop(event)"></artical>
+                <artical ondrop="drop(event)" ondragover="allowDrop(event)"></artical>
+
+             </div>
+        </div>
+         
+          
+    </section>
+    
+    <script src="js/ucf_cards.js"></script>
+</body>
+</html>
