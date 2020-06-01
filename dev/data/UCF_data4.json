@@ -1,0 +1,1395 @@
+{
+"UCF": {
+    "name" : "UCF",
+    "title" : "UCF deck",
+    "description" : "This model provides an online reference to the newly updated Universal Competency Framework (UCF).",
+    "children" : {
+        
+        "UCF_SortCards" : {
+            "name" : "UCF_SortCards",            
+            "title" : "sortCards",
+            "children" : {
+                "UCF_SortCards_FrequencySort" : {
+                    "name" : "UCF_SortCards_FrequencySort",
+                    "title" : "Frequency Sort",
+                    "text_1" : "Competencies that are",
+                    "children":{
+                        "UCF_SortCards_FrequencySort_FS-1" : {
+                            "name" : "UCF_SortCards_FrequencySort_FS-1",
+                            "val_1" : "Frequently Demonstrated"
+                            },
+                        "UCF_SortCards_FrequencySort_FS-2" : {
+                            "name" : "UCF_SortCards_FrequencySort_FS-2",
+                            "val_1" : "Sometimes Demonstrated"
+                            },
+                        "UCF_SortCards_FrequencySort_FS-3" : {
+                            "name" : "UCF_SortCards_FrequencySort_FS-3",
+                            "val_1" : "Seldom Demonstrated"
+                            },
+                        "UCF_SortCards_FrequencySort_FS-4" : {
+                            "name" : "UCF_SortCards_FrequencySort_FS-4",
+                            "val_1" : "Never Demonstrated"
+                            }
+                        }
+                    },
+                "UCF_SortCards_ComplexitySort" : {
+                    "name" : "UCF_SortCards_ComplexitySort",
+                    "title" : "Complexity Sort",
+                    "text_1" : "Competencies that are",
+                    "children":{
+                        "UCF_SortCards_ComplexitySort_CS-1" : {
+                            "name" : "UCF_SortCards_ComplexitySort_CS-1",
+                            "val_1" : "Highly Complex", 
+                            "val_2" : "Very Difficult", 
+                            "join" : "or"
+                            },
+                        "UCF_SortCards_ComplexitySort_CS-2" : {
+                            "name" : "UCF_SortCards_ComplexitySort_CS-2",
+                            "val_1" : "Moderately Complex", 
+                            "val_2" : "Difficult", 
+                            "join" : "or"
+                            },
+                        "UCF_SortCards_ComplexitySort_CS-3" : {
+                            "name" : "UCF_SortCards_ComplexitySort_CS-3",
+                            "val_1" : "Relatively Simple", 
+                            "val_2" : "Easy", 
+                            "join" : "or"
+                            }
+                        }
+                    },
+                "UCF_SortCards_ImportanceSort" : {
+                    "name" : "UCF_SortCards_ImportanceSort",
+                    "title" : "Importance Sort",
+                    "text_1" : "Competencies that are",
+                    "text_2" : "for job success",
+                    "children":{
+                        "UCF_SortCards_ImportanceSort_IS-1" : {
+                            "name" : "UCF_SortCards_ImportanceSort_IS-1",
+                            "val_1" : "Essential", 
+                            "val_2" : "Critical", 
+                             "join" : "or"
+                            },
+                        "UCF_SortCards_ImportanceSort_IS-2" : {
+                            "name" : "UCF_SortCards_ImportanceSort_IS-2",
+                            "val_1" : "Desirable"
+                            },
+                        "UCF_SortCards_ImportanceSort_IS-3" : {
+                            "name" : "UCF_SortCards_ImportanceSort_IS-3",
+                            "val_1" : "Less Relevant"
+                            },
+                        "UCF_SortCards_ImportanceSort_IS-4" : {
+                            "name" : "UCF_SortCards_ImportanceSort_IS-4",
+                            "val_1" : "Not Relevant"
+                            }
+                        }
+                    },
+                "UCF_SortCards_AssessmentSort" : {
+                    "name" : "UCF_SortCards_AssessmentSort",
+                    "title" : "Assessment Sort",
+                    "text_1" : "Competencies that ",
+                    "children":{
+                        "UCF_SortCards_AssessmentSort_AS-1" : {
+                            "name" : "UCF_SortCards_AssessmentSort_AS-1",
+                            "textMod" : "are an",
+                            "val_1" : "Outstanding Strength"
+                            },
+                        "UCF_SortCards_AssessmentSort_AS-2" : {
+                            "name" : "UCF_SortCards_AssessmentSort_AS-2",
+                            "textMod" : "are a",
+                            "val_1" : "Strength"
+                            },
+                        "UCF_SortCards_AssessmentSort_AS-3" : {
+                            "name" : "UCF_SortCards_AssessmentSort_AS-3",
+                            "textMod" : "are",
+                            "val_1" : "Satisfactory", 
+                            "val_2" : "OK",
+                             "join" : "or"
+                            },
+                        "UCF_SortCards_AssessmentSort_AS-4" : {
+                            "name" : "UCF_SortCards_AssessmentSort_AS-4",
+                            "textMod" : "require",
+                            "val_1" : "Some Development"
+                            },
+                        "UCF_SortCards_AssessmentSort_AS-5" : {
+                            "name" : "UCF_SortCards_AssessmentSort_AS-5",
+                            "textMod" : "are a",
+                            "val_1" : "Key Area For Development"
+                            }
+                        }
+                    }
+                }
+            },
+        
+        "UCF_CompCards" : {
+            "name" : "UCF_CompCards",
+            "title": "comptancy_cards",
+            "children" : {
+                "UCF_CompCards_Factor-1" : {
+                    "name" : "UCF_CompCards_Factor-1",
+                    "title" : "Leading and Deciding",
+                    "description" : "Takes control and exercises leadership, initiates action, gives direction and takes responsibility.",
+                    "colour" : "#009FE3",
+                    "children" : {
+                        "UCF_CompCards_Factor-1_Dimension-1":{
+                            "name" : "UCF_CompCards_Factor-1_Dimension-1",
+                            "title" : "Decision Making",
+                            "description" : "Makes prompt decisions, even when they involve risk; makes difficult decisions, even when they involve tough choices; makes well|informed and considered decisions, and takes responsibility for results.",
+
+                            "children" : {                     
+                                "UCF_CompCards_Factor-1_Dimension-1_Component-1" : {
+                                    "name" : "UCF_CompCards_Factor-1_Dimension-1_Component-1",
+                                    "title" : "Makes quick decisions",
+                                    "code" : "1.1a",
+                                    "description" : "Acts quickly and makes timely decisions, even ones involving risk.",
+                                    "indicators" : [
+                                        "Decides on a course of action without unnecessary delay",
+                                        "Takes confident, decisive action in pressured situations",
+                                        "Is not inhibited by risk when making decisions"
+                                        ]
+                                    },
+                                "UCF_CompCards_Factor-1_Dimension-1_Component-2" : {
+                                    "name" : "UCF_CompCards_Factor-1_Dimension-1_Component-2",
+                                    "title" : "Makes difficul decisions",
+                                    "code" : "1.1b",
+                                    "description" : "Makes difficult decisions and is not deterred by opposition.",
+                                    "indicators" : [
+                                        "Decides on a course of action without unnecessary delay",
+                                        "Takes confident, decisive action in pressured situations",
+                                        "Is not inhibited by risk when making decisions"
+                                        ]
+                                    },
+                                "UCF_CompCards_Factor-1_Dimension-1_Component-3" : {
+                                    "name" : "UCF_CompCards_Factor-1_Dimension-1_Component-3",
+                                    "title" : "Makes considered decisions",
+                                    "code" : "1.1c",
+                                    "description" : "Makes informed and well|considered decisions.",
+                                    "indicators" : [
+                                        "Makes well|informed decisions after considering the relevant information",
+                                        "Minimizes risk by considering the uncertainties that are involved in a decision",
+                                        "Carefully considers all options before making a decision"
+                                        ]
+                                    },
+                                "UCF_CompCards_Factor-1_Dimension-1_Component-4" : {
+                                    "name" : "UCF_CompCards_Factor-1_Dimension-1_Component-4",
+                                    "title" : "Takes responsibility",
+                                    "code" : "1.1d",
+                                    "description" : "Takes accountability for decisions made and accepts responsibility when things go wrong.",
+                                    "indicators" : [
+                                        "Takes accountability for decisions",
+                                        "Minimizes risk by considering the uncertainties that are involved in a decision",
+                                        "Accepts appropriate responsibility when things go wrong"
+                                        ]
+                                    }
+                                }
+                            },
+                        "UCF_CompCards_Factor-1_Dimension-2":{
+                            "name" : "UCF_CompCards_Factor-1_Dimension-2",
+                            "title" : "Leadership",
+                            "description" : "Leads groups and delegates work based on skills and potential; empowers others and motivates high performance; sets clear expectations and standards for performance; monitors work and coaches others to develop their full potential.",
+                            "children" : {                     
+                                "UCF_CompCards_Factor-1_Dimension-2_Component-1" : {
+                                    "name" : "UCF_CompCards_Factor-1_Dimension-2_Component-1",
+                                    "title" : "Defines roles and responsibilities",
+                                    "code" : "1.2a",
+                                    "description" : "Defines responsibilities and task priorities for others. ",
+                                    "indicators" : [
+                                        "Clearly defines the roles, responsibilities, and objectives of others",
+                                        "Specifies task priorities for others"
+                                        ]
+                                    },
+                                "UCF_CompCards_Factor-1_Dimension-2_Component-2" : {
+                                    "name" : "UCF_CompCards_Factor-1_Dimension-2_Component-2",
+                                    "title" : "Monitors performance",
+                                    "code" : "1.2b",
+                                    "description" : "Monitors others' progress and directly addresses performance issues.",
+                                    "indicators" : [
+                                        "Monitors the performance of others",
+                                        "Takes appropriate action when individuals fail to meet expected standards"
+                                        ]
+                                    },
+                                "UCF_CompCards_Factor-1_Dimension-2_Component-3" : {
+                                    "name" : "UCF_CompCards_Factor-1_Dimension-2_Component-3",
+                                    "title" : "Provides informal feedback",
+                                    "code" : "1.2c",
+                                    "description" : "Offers constructive and timely informal feedback.",
+                                    "indicators" : [
+                                        "Provides objective feedback to others",
+                                        "Gives feedback tactfully and constructively",
+                                        "Offers timely feedback to others"
+                                        ]
+                                    },
+                                "UCF_CompCards_Factor-1_Dimension-2_Component-4" : {
+                                    "name" : "UCF_CompCards_Factor-1_Dimension-2_Component-4",
+                                    "title" : "Coordinates others’ work",
+                                    "code" : "1.2d",
+                                    "description" : "Takes ownership of organizing and coordinating others'work.",
+                                    "indicators" : [
+                                        "Takes the lead in organizing work tasks",
+                                        "Coordinates others’ activities",
+                                        "Distributes workload appropriately"
+                                        ]
+                                    },
+                                "UCF_CompCards_Factor-1_Dimension-2_Component-5" : {
+                                    "name" : "UCF_CompCards_Factor-1_Dimension-2_Component-5",
+                                    "title" : "Motivates and empowers others",
+                                    "code" : "1.2e",
+                                    "description" : "Inspires others to strive for success and achieve goals.",
+                                    "indicators" : [
+                                        "Inspires enthusiasm and a positive attitude from others about their work",
+                                        "Takes steps to keep people focused and motivated to achieve goals",
+                                        "Provides others with the authority, resources, and freedom to independently accomplish tasks"
+                                        ]
+                                    },
+                                "UCF_CompCards_Factor-1_Dimension-2_Component-6" : {
+                                    "name" : "UCF_CompCards_Factor-1_Dimension-2_Component-6",
+                                    "title" : "Supports and coaches others",
+                                    "code" : "1.2f",
+                                    "description" : "Coaches and develops others.",
+                                    "indicators" : [
+                                        "Encourages others to consider and pursue development opportunities",
+                                        "Shares suggestions on how to improve and develop",
+                                        "Identifies and recommends resources that support the development of others"
+                                        ]
+                                    },
+                                "UCF_CompCards_Factor-1_Dimension-2_Component-7" : {
+                                    "name" : "UCF_CompCards_Factor-1_Dimension-2_Component-7",
+                                    "title" : "Identifies potential",
+                                    "code" : "1.2g",
+                                    "description" : "Accurately judges the capability and potential of others.",
+                                    "indicators" : [
+                                        "Identifies the strengths and limitations of others",
+                                        "Accurately judges the future potential of others"
+                                        ]
+                                    },
+                                "UCF_CompCards_Factor-1_Dimension-2_Component-8" : {
+                                    "name" : "UCF_CompCards_Factor-1_Dimension-2_Component-8",
+                                    "title" : "Rewards performance",
+                                    "code" : "1.2h",
+                                    "description" : "Uses rewards fairly to recognize performance.",
+                                    "indicators" : [
+                                        "Uses formal and informal structures for rewarding others' performance",
+                                        "Creates formal reward systems at work to recognize good performance"
+                                        ]
+                                    }
+                                }
+                            }
+                        }
+                    },
+                "UCF_CompCards_Factor-2" : {
+                    "name" : "UCF_CompCards_Factor-2",
+                    "title" : "Supporting and Co-operating",
+                    "description" : "Supports others and shows respect and positive regard for them in social situations. Puts people first, working effectively with individuals and teams, clients and staff. Behaves consistently with clear personal values that complement those of the organization.",
+                    "colour" : "#e6007e",
+                    "children" : {
+                        "UCF_CompCards_Factor-2_Dimension-1":{
+                            "name" : "UCF_CompCards_Factor-2_Dimension-1",
+                            "title" : "Collaboration",
+                            "description" : "Accepts and appreciates other people; demonstrates courtesy and compassion; supports, encourages, and thanks others; consults, listens, and understands others; promotes diversity and builds morale, team cohesion, and collaboration.",
+                            "children" : {                     
+                                "UCF_CompCards_Factor-2_Dimension-1_Component-1" : {
+                                    "name" : "UCF_CompCards_Factor-2_Dimension-1_Component-1",
+                                    "title" : "Understands others",
+                                    "code" : "2.1a",
+                                    "description" : "Observes and analyses behavior to understand others' reactions and perspectives.",
+                                    "indicators" : [
+                                        "Observes and analyses people’s behavior",
+                                        "Understands others' perspectives",
+                                        "Understands the relationships between people",
+                                        "Anticipates others' behavior and reactions"
+                                        ]
+                                    },
+                                "UCF_CompCards_Factor-2_Dimension-1_Component-2" : {
+                                    "name" : "UCF_CompCards_Factor-2_Dimension-1_Component-2",
+                                    "title" : "Puts the team first",
+                                    "code" : "2.1b",
+                                    "description" : "Focuses on team goals.",
+                                    "indicators" : [
+                                        "Puts the team's goals above personal goals",
+                                        "Makes personal sacrifices for the benefit of the team",
+                                        "Shares updates with the team proactively and openly to avoid surprises, delays, or inefficiencies"
+                                        ]
+                                    },
+                                "UCF_CompCards_Factor-2_Dimension-1_Component-3" : {
+                                    "name" : "UCF_CompCards_Factor-2_Dimension-1_Component-3",
+                                    "title" : "Fosters team cohesion",
+                                    "code" : "2.1c",
+                                    "description" : "Energises the team and builds cohesion.",
+                                    "indicators" : [
+                                        "Capitalizes on opportunities to build and maintain team spirit",
+                                        "Finds and implements strategies to improve team cohesion",
+                                        "Encourages collaboration by emphasizing a common purpose"
+                                        ]
+                                    },
+                                "UCF_CompCards_Factor-2_Dimension-1_Component-4" : {
+                                    "name" : "UCF_CompCards_Factor-2_Dimension-1_Component-4",
+                                    "title" : "Recognizes others",
+                                    "code" : "2.1d",
+                                    "description" : "Recognizes and acknowledges others' contributions.",
+                                    "indicators" : [
+                                        "otices the effort made by others",
+                                        "Makes sure that team members get credit for their contributions",
+                                        "Thanks others for their contributions"
+                                        ]
+                                    },
+                                "UCF_CompCards_Factor-2_Dimension-1_Component-5" : {
+                                    "name" : "UCF_CompCards_Factor-2_Dimension-1_Component-5",
+                                    "title" : "Listens attentively",
+                                    "code" : "2.1e",
+                                    "description" : "Listens patiently and attentively.",
+                                    "indicators" : [
+                                        "Listens patiently to others to hear their points of view",
+                                        "Allows others the opportunity to speak without interrupting",
+                                        "Waits until others have finished speaking before forming an opinion on what they have said"
+                                        ]
+                                    },
+                                "UCF_CompCards_Factor-2_Dimension-1_Component-6" : {
+                                    "name" : "UCF_CompCards_Factor-2_Dimension-1_Component-6",
+                                    "title" : "Consults others",
+                                    "code" : "2.1f",
+                                    "description" : "Seeks out and encourages others to express their views.",
+                                    "indicators" : [
+                                        "Seeks input from others before making a decision",
+                                        "Encourages others to express their views"
+                                        ]
+                                    },
+                                "UCF_CompCards_Factor-2_Dimension-1_Component-7" : {
+                                    "name" : "UCF_CompCards_Factor-2_Dimension-1_Component-7",
+                                    "title" : "Encourages diversity",
+                                    "code" : "2.1g",
+                                    "description" : "Encourages diversity and inclusion for all employees.",
+                                    "indicators" : [
+                                        "Draws on the diverse backgrounds, skills, and knowledge of people",
+                                        "Strives to work with a diverse range of people",
+                                        "Contributes to an inclusive work environment where all individuals are accepted and appreciated"
+                                        ]
+                                    },
+                                "UCF_CompCards_Factor-2_Dimension-1_Component-8" : {
+                                    "name" : "UCF_CompCards_Factor-2_Dimension-1_Component-8",
+                                    "title" : "Accepts others",
+                                    "code" : "2.1h",
+                                    "description" : "Appreciates different viewpoints and is non-judgmental.",
+                                    "indicators" : [
+                                        "Respects and values different viewpoints",
+                                        "Approaches others in a non-judgmental way"
+                                        ]
+                                    },
+                                "UCF_CompCards_Factor-2_Dimension-1_Component-9" : {
+                                    "name" : "UCF_CompCards_Factor-2_Dimension-1_Component-9",
+                                    "title" : "Demonstrates empathy",
+                                    "code" : "2.1i",
+                                    "description" : "Takes steps to show compassion and support for others and is sensitive to others' emotional needs.",
+                                    "indicators" : [
+                                        "Demonstrates an awareness of the emotional needs of others",
+                                        "Shows concern and compassion for others",
+                                        "Takes steps to provide emotional support to others"
+                                        ]
+                                    },
+                                "UCF_CompCards_Factor-2_Dimension-1_Component-10" : {
+                                    "name" : "UCF_CompCards_Factor-2_Dimension-1_Component-10",
+                                    "title" : "Shows courtesy",
+                                    "code" : "2.1j",
+                                    "description" : "Energises the team and builds cohesion.",
+                                    "indicators" : [
+                                        "Treats others with courtesy, politeness, and respect",
+                                        "Encourages collaboration by emphasizing a common purpose"
+                                        ]
+                                    }
+                                }
+                            },
+                        "UCF_CompCards_Factor-2_Dimension-2":{
+                            "name" : "UCF_CompCards_Factor-2_Dimension-2",
+                            "title" : "Ethics and Values",
+                            "description" : "Upholds ethical standards and values; maintains confidentiality; follows through on commitments; encourages responsibility towards the community and the environment.",
+                            "children" : {                     
+                                "UCF_CompCards_Factor-2_Dimension-2_Component-1" : {
+                                    "name" : "UCF_CompCards_Factor-2_Dimension-2_Component-1",
+                                    "title" : "Acts ethically",
+                                    "code" : "2.2a",
+                                    "description" : "Upholds ethical standards regardless of external pressure or competing agendas.",
+                                    "indicators" : [
+                                        "Acts consistently in accordance with ethical standards",
+                                        "Upholds ethical standards despite external pressure or inconvenience",
+                                        "Refuses to compromise ethical standards to advance either personal or organizational objectives"
+                                        ]
+                                    },
+                                "UCF_CompCards_Factor-2_Dimension-2_Component-2" : {
+                                    "name" : "UCF_CompCards_Factor-2_Dimension-2_Component-2",
+                                    "title" : "Earns trust",
+                                    "code" : "2.2b",
+                                    "description" : "Keeps promises and refrains from disclosing confidential information.",
+                                    "indicators" : [
+                                        "Follows through on promises and commitments",
+                                        "Maintains confidentiality when appropriate",
+                                        "Avoids intentionally misleading people"
+                                        ]
+                                    },
+                                "UCF_CompCards_Factor-2_Dimension-2_Component-3" : {
+                                    "name" : "UCF_CompCards_Factor-2_Dimension-2_Component-3",
+                                    "title" : "Promotes social responsibility",
+                                    "code" : "2.2c",
+                                    "description" : "Promotes social responsibility within the organization",
+                                    "indicators" : [
+                                        "Demonstrates an awareness of the impact of organizational operations on the wider community",
+                                        "Considers community values when making business decisions",
+                                        "Works towards making the organization more socially responsible"
+                                        ]
+                                    },
+                                "UCF_CompCards_Factor-2_Dimension-2_Component-4" : {
+                                    "name" : "UCF_CompCards_Factor-2_Dimension-2_Component-4",
+                                    "title" : "Promotes environmental responsibility",
+                                    "code" : "2.2d",
+                                    "description" : "Promotes environmental responsibility within the organization",
+                                    "indicators" : [
+                                        "Demonstrates an awareness of the impact of organizational operations on the environment",
+                                        "Evaluates environmental considerations when making business decisions",
+                                        "Works toward making the organization more environmentally responsible"
+                                        ]
+                                    }
+                                }
+                            }
+                        }
+                    },
+                "UCF_CompCards_Factor-3" : {
+                    "name" : "UCF_CompCards_Factor-3",
+                    "title" : "Interacting and Presenting",
+                    "description" : "Communicates and networks effectively. Successfully persuades and influences others. Relates to others in a confident and relaxed manner.",
+                    "colour" : "#5c1d26",
+                    "children" : {
+                        "UCF_CompCards_Factor-3_Dimension-1":{
+                            "name" : "UCF_CompCards_Factor-3_Dimension-1",
+                            "title" : "Building Relationships",
+                            "description" : "Develops relationships and builds networks; creates a positive impression and builds rapport; adapts approach to interact effectively with others; effectively manages conflict; helps others succeed.",
+                            "children" : {                     
+                                "UCF_CompCards_Factor-3_Dimension-1_Component-1" : {
+                                    "name" : "UCF_CompCards_Factor-3_Dimension-1_Component-1",
+                                    "title" : "Builds rapport",
+                                    "code" : "3.1a",
+                                    "description" : "Makes new connections easily.",
+                                    "indicators" : [
+                                        "Makes personal connections with others quickly",
+                                        "Appears confident and comfortable speaking to strangers"
+                                        ]
+                                    },
+                                "UCF_CompCards_Factor-3_Dimension-1_Component-2" : {
+                                    "name" : "UCF_CompCards_Factor-3_Dimension-1_Component-2",
+                                    "title" : "Creates a positive impression",
+                                    "code" : "3.1b",
+                                    "description" : "Manages own behavior to create a positive impression.",
+                                    "indicators" : [
+                                        "Creates a positive impression on others",
+                                        "Maintains a professional demeanor",
+                                        "Behaves appropriately according to the occasion"
+                                        ]
+                                    },
+                                "UCF_CompCards_Factor-3_Dimension-1_Component-3" : {
+                                    "name" : "UCF_CompCards_Factor-3_Dimension-1_Component-3",
+                                    "title" : "Adapts interpersonal style",
+                                    "code" : "3.1c",
+                                    "description" : "Adjusts approach and behavior to interact more effectively with others.",
+                                    "indicators" : [
+                                        "Relates well to people of different levels of seniority",
+                                        "Adapts own style to fit in with different people or situations"
+                                        ]
+                                    },
+                                "UCF_CompCards_Factor-3_Dimension-1_Component-4" : {
+                                    "name" : "UCF_CompCards_Factor-3_Dimension-1_Component-4",
+                                    "title" : "Maintains good working relationships",
+                                    "code" : "3.1d",
+                                    "description" : "Puts effort into developing and sustaining good relationships with others.",
+                                    "indicators" : [
+                                        "Makes people feel at ease",
+                                        "Gets along well with others",
+                                        "Builds and maintains relationships effectively"
+                                        ]
+                                    },
+                                "UCF_CompCards_Factor-3_Dimension-1_Component-5" : {
+                                    "name" : "UCF_CompCards_Factor-3_Dimension-1_Component-5",
+                                    "title" : "Offers help",
+                                    "code" : "3.1e",
+                                    "description" : "Shares information and offers guidance and assistance to others to help them succeed.",
+                                    "indicators" : [
+                                        "Recognizes when others need help and offers appropriate support",
+                                        "Shares tips with others on how to best perform the job",
+                                        "Takes time to explain things thoroughly"
+                                        ]
+                                    },
+                                "UCF_CompCards_Factor-3_Dimension-1_Component-6" : {
+                                    "name" : "UCF_CompCards_Factor-3_Dimension-1_Component-6",
+                                    "title" : "Builds and maintains networks",
+                                    "code" : "3.1f",
+                                    "description" : "Develops internal and external networks and assists others to do the same.",
+                                    "indicators" : [
+                                        "Establishes and nurtures a wide network of relationships",
+                                        "Quickly recognizes how to make use of new contacts to achieve goals",
+                                        "Creates opportunities for self and others to network"
+                                        ]
+                                    },
+                                "UCF_CompCards_Factor-3_Dimension-1_Component-7" : {
+                                    "name" : "UCF_CompCards_Factor-3_Dimension-1_Component-7",
+                                    "title" : "Develops cross-functional awareness",
+                                    "code" : "3.1g",
+                                    "description" : "Seeks and maintains an understanding of how different business units fit together.",
+                                    "indicators" : [
+                                        "Seeks to understand the roles played by different parts of the organization",
+                                        "Understands how own work links to work in other departments"
+                                        ]
+                                    },
+                                "UCF_CompCards_Factor-3_Dimension-1_Component-8" : {
+                                    "name" : "UCF_CompCards_Factor-3_Dimension-1_Component-8",
+                                    "title" : "Manages conflict",
+                                    "code" : "3.1h",
+                                    "description" : "Resolves conflicts and mediates disagreements.",
+                                    "indicators" : [
+                                        "Mediates disputes to facilitate agreements",
+                                        "Manages disagreements with tact and diplomacy",
+                                        "Negotiates solutions to conflicts"
+                                        ]
+                                    }
+                                }
+                            },
+                        "UCF_CompCards_Factor-3_Dimension-2":{
+                            "name" : "UCF_CompCards_Factor-3_Dimension-2",
+                            "title" : "Influence",
+                            "description" : "Establishes credibility and uses compelling insights to appeal to others' needs and persuade them to a different point of view; navigates political situations and negotiates to gain agreement from others and achieve desired outcomes.",
+                            "children" : {                     
+                                "UCF_CompCards_Factor-3_Dimension-2_Component-1" : {
+                                    "name" : "UCF_CompCards_Factor-3_Dimension-2_Component-1",
+                                    "title" : "Establishes credibility",
+                                    "code" : "3.2a",
+                                    "description" : "Presents self in a manner that earns respect.",
+                                    "indicators" : [
+                                        "Speaks with authority and conviction",
+                                        "Demonstrates personal credibility and expertise"
+                                        ]
+                                    },
+                                "UCF_CompCards_Factor-3_Dimension-2_Component-2" : {
+                                    "name" : "UCF_CompCards_Factor-3_Dimension-2_Component-2",
+                                    "title" : "Develops compelling positions",
+                                    "code" : "3.2b",
+                                    "description" : "Develops compelling insights, logical arguments, and credible responses to objections.",
+                                    "indicators" : [
+                                        "Uses relevant insights to support own position",
+                                        "Develops logical arguments from facts and/or data to position an idea or point of view",
+                                        "Provides credible responses to objections"
+                                        ]
+                                    },
+                                "UCF_CompCards_Factor-3_Dimension-2_Component-3" : {
+                                    "name" : "UCF_CompCards_Factor-3_Dimension-2_Component-3",
+                                    "title" : "Appeals to emotions",
+                                    "code" : "3.2c",
+                                    "description" : "Appeals to others' needs, concerns, and emotions to win them over.",
+                                    "indicators" : [
+                                        "Positions argument or message with the emotional viewpoints of others in mind",
+                                        "Shares insights that create tension and lead others to question their thinking and current assumptions",
+                                        "Changes others' feelings and behavior by appealing to both rational and emotional concerns",
+                                        "Connects with others by providing data, stories, and examples related to their own situation"
+                                        ]
+                                    },
+                                "UCF_CompCards_Factor-3_Dimension-2_Component-4" : {
+                                    "name" : "UCF_CompCards_Factor-3_Dimension-2_Component-4",
+                                    "title" : "Persuades others",
+                                    "code" : "3.2d",
+                                    "description" : "Influences others to a point of view.",
+                                    "indicators" : [
+                                        "Promotes ideas by persuading others",
+                                        "Wins support from others for own point of view",
+                                        "Adapts influencing strategies where necessary"
+                                        ]
+                                    },
+                                "UCF_CompCards_Factor-3_Dimension-2_Component-5" : {
+                                    "name" : "UCF_CompCards_Factor-3_Dimension-2_Component-5",
+                                    "title" : "Gains agreement",
+                                    "code" : "3.2.e",
+                                    "description" : "Gains agreement from others on a clear course of action.",
+                                    "indicators" : [
+                                        "Identifies and engages with key stakeholders who have the ability to make decisions",
+                                        "Builds consensus to bring others along to agree on an issue",
+                                        "Assesses readiness for action and addresses opposition or concerns that are delaying agreement",
+                                        "Closes deals, sales, or discussions with firm agreement from all parties"
+                                        ]
+                                    },
+                                "UCF_CompCards_Factor-3_Dimension-2_Component-6" : {
+                                    "name" : "UCF_CompCards_Factor-3_Dimension-2_Component-6",
+                                    "title" : "Manages political situations",
+                                    "code" : "3.2.f",
+                                    "description" : "Works effectively in challenging political situations within an organization to build support for initiatives and defend own area, team, or agenda.",
+                                    "indicators" : [
+                                        "Works effectively in political situations",
+                                        "Builds support throughout the organization for own initiatives",
+                                        "Champions own area, team, or responsibilities against conflicting organizational priorities",
+                                        "Navigates the internal politics of the organization to maximize success"
+                                        ]
+                                    }
+                                }
+                            },
+                        "UCF_CompCards_Factor-3_Dimension-3":{
+                            "name" : "UCF_CompCards_Factor-3_Dimension-3",
+                            "title" : "Communication",
+                            "description" : "Understands spoken information; speaks clearly and understandably; presents with confidence; gauges audience reaction, interest, and understanding, and adjusts communication style or content accordingly.",
+                            "children" : {                     
+                                "UCF_CompCards_Factor-3_Dimension-3_Component-1" : {
+                                    "name" : "UCF_CompCards_Factor-3_Dimension-3_Component-1",
+                                    "title" : "Understands spoken information",
+                                    "code" : "3.3a",
+                                    "description" : "Shows strong comprehension of spoken information, including underlying meaning.",
+                                    "indicators" : [
+                                        "Quickly understands and retains the essential points when given spoken instructions",
+                                        "Identifies the important information in others' spoken communication",
+                                        "Understands the unspoken intention or message in others' spoken communications"
+                                        ]
+                                    },
+                                "UCF_CompCards_Factor-3_Dimension-3_Component-2" : {
+                                    "name" : "UCF_CompCards_Factor-3_Dimension-3_Component-2",
+                                    "title" : "Speaks clearly",
+                                    "code" : "3.3b",
+                                    "description" : "Speaks fluently, audibly, and expresses ideas clearly.",
+                                    "indicators" : [
+                                        "Communicates information and ideas by speaking in a way that others will understand",
+                                        "Speaks clearly and fluently, at an appropriate pace",
+                                        "Uses words and grammar correctly when speaking",
+                                        "Avoids unnecessarily complicated language or jargon"
+                                        ]
+                                    },
+                                "UCF_CompCards_Factor-3_Dimension-3_Component-3" : {
+                                    "name" : "UCF_CompCards_Factor-3_Dimension-3_Component-3",
+                                    "title" : "Engages others when speaking",
+                                    "code" : "3.3c",
+                                    "description" : "Speaks in a confident, interesting, and captivating manner.",
+                                    "indicators" : [
+                                        "Projects confidence when speaking",
+                                        "Engages the audience when presenting",
+                                        "Captures the audience's attention effectively with both verbal and non-verbal communication"
+                                        ]
+                                    },
+                                "UCF_CompCards_Factor-3_Dimension-3_Component-4" : {
+                                    "name" : "UCF_CompCards_Factor-3_Dimension-3_Component-4",
+                                    "title" : "Tailors the message to suit audience characteristics and needs.",
+                                    "code" : "3.3d",
+                                    "description" : "Influences others to a point of view.",
+                                    "indicators" : [
+                                        "Learns the characteristics of the intended audience prior to speaking",
+                                        "Tailors style and level of complexity to the audience",
+                                        "Quickly responds to audience feedback, changing style or complexity as necessary"
+                                        ]
+                                    }
+                                }
+                            }
+                        }
+                    },
+                "UCF_CompCards_Factor-4" : {
+                    "name" : "UCF_CompCards_Factor-4",
+                    "title" : "Analyzing and Interpreting",
+                    "description" : "Shows evidence of clear analytical thinking. Gets to the heart of complex problems and issues. Applies own expertise effectively. Quickly learns new technology. Communicates well in writing.",
+                    "colour" : "#333e91",
+                    "children" : {
+                        "UCF_CompCards_Factor-4_Dimension-1":{
+                            "name" : "UCF_CompCards_Factor-4_Dimension-1",
+                            "title" : "Writing",
+                            "description" : "Understands written information; writes clearly, succinctly, and correctly, avoiding jargon and complexity; structures written information to meet the audience's needs and stimulate interest.",
+                            "children" : {                     
+                                "UCF_CompCards_Factor-4_Dimension-1_Component-1" : {
+                                    "name" : "UCF_CompCards_Factor-4_Dimension-1_Component-1",
+                                    "title" : "Understands written information",
+                                    "code" : "4.1a",
+                                    "description" : "Shows strong comprehension of written information, including underlying meaning.",
+                                    "indicators" : [
+                                        "Reads fluently",
+                                        "Understands ideas and concepts presented in written passages",
+                                        "Identifies the important information when reading",
+                                        "Understands the unwritten message or intention in written information"
+                                        ]
+                                    },
+                                "UCF_CompCards_Factor-4_Dimension-1_Component-2" : {
+                                    "name" : "UCF_CompCards_Factor-4_Dimension-1_Component-2",
+                                    "title" : "Writes with clarity",
+                                    "code" : "4.1b",
+                                    "description" : "Writes and expresses ideas clearly.",
+                                    "indicators" : [
+                                        "Produces written communication that is concise, logically structured, and easy to follow",
+                                        "Writes fluently",
+                                        "Uses correct spelling, punctuation, and grammar in writing",
+                                        "Avoids unnecessarily complicated language or jargon when writing"
+                                        ]
+                                    },
+                                "UCF_CompCards_Factor-4_Dimension-1_Component-3" : {
+                                    "name" : "UCF_CompCards_Factor-4_Dimension-1_Component-3",
+                                    "title" : "Writes in an engaging style",
+                                    "code" : "4.1c",
+                                    "description" : "Writes in an engaging manner.",
+                                    "indicators" : [
+                                        "Writes in a style that captures the reader's interest and attention",
+                                        "Writes reports that stimulate interest while communicating information"
+                                        ]
+                                    }
+                                }
+                            },
+                        "UCF_CompCards_Factor-4_Dimension-2":{
+                            "name" : "UCF_CompCards_Factor-4_Dimension-2",
+                            "title" : "Applying Expertise and Technology",
+                            "description" : "Applies functional and technical expertise to accomplish work; uses technology systems to communicate information; adopts and operates job-related technology effectively; repairs problems associated with technology; generates new functionality within technology systems.",
+                            "children" : {                     
+                                "UCF_CompCards_Factor-4_Dimension-2_Component-1" : {
+                                    "name" : "UCF_CompCards_Factor-4_Dimension-2_Component-1",
+                                    "title" : "Applies functional expertise",
+                                    "code" : "4.2.a",
+                                    "description" : "Proficiently applies relevant knowledge and skills to one's job.",
+                                    "indicators" : [
+                                        "Demonstrates detailed job knowledge and expertise",
+                                        "Applies specialist skills to job tasks",
+                                        "Answers technical questions from clients or colleagues easily and accurately",
+                                        "Demonstrates thorough knowledge of the features of relevant products and services"
+                                        ]
+                                    },
+                                "UCF_CompCards_Factor-4_Dimension-2_Component-2" : {
+                                    "name" : "UCF_CompCards_Factor-4_Dimension-2_Component-2",
+                                    "title" : "Communicates using technology",
+                                    "code" : "4.2.b",
+                                    "description" : "Effectively uses presentation software and messaging systems, and utilizes technology systems to access and communicate information.",
+                                    "indicators" : [
+                                        "Uses messaging systems to effectively communicate with colleagues, clients, or customers",
+                                        "Communicates and disseminates ideas to audiences using multimedia presentation platforms",
+                                        "Represents the organization effectively using public facing technologies"
+                                        ]
+                                    },
+                                "UCF_CompCards_Factor-4_Dimension-2_Component-3" : {
+                                    "name" : "UCF_CompCards_Factor-4_Dimension-2_Component-3",
+                                    "title" : "Operates job related technology",
+                                    "code" : "4.2.c",
+                                    "description" : "Identifies, adopts, and operates technology available to complete one's job more effectively or efficiently.",
+                                    "indicators" : [
+                                        "Maintains awareness of technological developments in relevant fields",
+                                        "Learns and adopts new technology with ease",
+                                        "Applies technology in a manner that improves productivity and efficiency",
+                                        "Identifies useful technology proactively"
+                                        ]
+                                    },
+                                "UCF_CompCards_Factor-4_Dimension-2_Component-4" : {
+                                    "name" : "UCF_CompCards_Factor-4_Dimension-2_Component-4",
+                                    "title" : "Installs, troubleshoots, and repairs technology or equipment",
+                                    "code" : "4.2.d",
+                                    "description" : "Installs, troubleshoots, and repairs problems associated with software, systems, or equipment used at work.",
+                                    "indicators" : [
+                                        "Identifies and fixes problems or malfunctions in equipment",
+                                        "Troubleshoots, debugs, or otherwise resolves problems with computer systems or software"
+                                        ]
+                                    },
+                                "UCF_CompCards_Factor-4_Dimension-2_Component-5" : {
+                                    "name" : "UCF_CompCards_Factor-4_Dimension-2_Component-5",
+                                    "title" : "Builds, designs, or creates new tools or systems",
+                                    "code" : "4.2.e",
+                                    "description" : "Generates new functionality within technology systems, automates processes, or creates products (e.g., programming, coding, engineering, and/or creating products or insights from data).",
+                                    "indicators" : [
+                                        "Writes scripts or computer programs to solve problems or automate processes",
+                                        "Uses code and software to efficiently combine, manipulate, summarize, and report complex data",
+                                        "Designs new products or tools for internal or commercial use"
+                                        ]
+                                    }
+                                }
+                            },
+                        "UCF_CompCards_Factor-4_Dimension-3":{
+                            "name" : "UCF_CompCards_Factor-4_Dimension-3",
+                            "title" : "Critical Thinking",
+                            "description" : "Gains an understanding of the situation or problem; evaluates, integrates, and categorizes information to identify issues, patterns, trends, and relationships; challenges assumptions and draws informed conclusions that enable effective approaches and solutions.",
+                            "children" : {                     
+                                "UCF_CompCards_Factor-4_Dimension-3_Component-1" : {
+                                    "name" : "UCF_CompCards_Factor-4_Dimension-3_Component-1",
+                                    "title" : "Categorizes information",
+                                    "code" : "4.3.a",
+                                    "description" : "Recognizes and uses rules to sort information or objects.",
+                                    "indicators" : [
+                                        "Quickly and accurately compares similarities and differences among symbols, objects, pictures, or patterns",
+                                        "Arranges information in a certain order according to a set of rules"
+                                        ]
+                                    },
+                                "UCF_CompCards_Factor-4_Dimension-3_Component-2" : {
+                                    "name" : "UCF_CompCards_Factor-4_Dimension-3_Component-2",
+                                    "title" : "Analyzes information",
+                                    "code" : "4.3.b",
+                                    "description" : "Identifies key factors and integrates information to understand data or situations.",
+                                    "indicators" : [
+                                        "Accurately judges the relevance and importance of different pieces of information",
+                                        "Identifies underlying relationships, causes, and effects",
+                                        "Combines pieces of information to form conclusions, general rules, or identify trends"
+                                        ]
+                                    },
+                                "UCF_CompCards_Factor-4_Dimension-3_Component-3" : {
+                                    "name" : "UCF_CompCards_Factor-4_Dimension-3_Component-3",
+                                    "title" : "Critically evaluates",
+                                    "code" : "4.3.c",
+                                    "description" : "Critically evaluates information to identify issues.",
+                                    "indicators" : [
+                                        "Identifies potential weaknesses in proposals or plans",
+                                        "Identifies and uncovers problems",
+                                        "Critically reviews others' work"
+                                        ]
+                                    },
+                                "UCF_CompCards_Factor-4_Dimension-3_Component-4" : {
+                                    "name" : "UCF_CompCards_Factor-4_Dimension-3_Component-4",
+                                    "title" : "Makes rational judgments",
+                                    "code" : "4.3.d",
+                                    "description" : "Makes logical judgments based on all pertinent data and facts.",
+                                    "indicators" : [
+                                        "Bases judgments on logical assessment of the information",
+                                        "Takes all relevant information into account when making judgments"
+                                        ]
+                                    },
+                                "UCF_CompCards_Factor-4_Dimension-3_Component-5" : {
+                                    "name" : "UCF_CompCards_Factor-4_Dimension-3_Component-5",
+                                    "title" : "Offers practical solutions",
+                                    "code" : "4.3.e",
+                                    "description" : "Provides workable solutions to problems.",
+                                    "indicators" : [
+                                        "Produces practical solutions that meet the demands of the situation",
+                                        "Suggests solutions quickly and productively"
+                                        ]
+                                    }
+                                }
+                            }
+                        
+                        
+                       
+                        
+                        
+                        }
+                    },
+                "UCF_CompCards_Factor-5" : {
+                    "name" : "UCF_CompCards_Factor-5",
+                    "title" : "Creating and Conceptualizing",
+                    "description" : "Open to new ideas and experiences. Seeks out learning opportunities. Handles situations and problems with innovation and creativity. Thinks broadly and strategically. Support and drives organizational change.",
+                    "colour" : "#ef7d1a",
+                    "children" : {
+                        "UCF_CompCards_Factor-5_Dimension-1":{
+                            "name" : "UCF_CompCards_Factor-5_Dimension-1",
+                            "title" : "Learning",
+                            "description" : "Identifies the information needed to address an issue; gathers information from routine and non-routine sources to support decision-making; assimilates new information quickly; masters new techniques easily.",
+                            "children" : {                     
+                                "UCF_CompCards_Factor-5_Dimension-1_Component-1" : {
+                                    "name" : "UCF_CompCards_Factor-5_Dimension-1_Component-1",
+                                    "title" : "Learns quickly",
+                                    "code" : "5.1a",
+                                    "description" : "Absorbs new information and masters new techniques easily.",
+                                    "indicators" : [
+                                        "Quickly identifies the key ideas behind a topic or technique",
+                                        "Commits new information to memory easily",
+                                        "Recognizes when own level of knowledge is sufficient for competent application",
+                                        "Demonstrates mastery of new techniques, knowledge or information through applying them in own work"
+                                        ]
+                                    },
+                                "UCF_CompCards_Factor-5_Dimension-1_Component-2" : {
+                                    "name" : "UCF_CompCards_Factor-5_Dimension-1_Component-2",
+                                    "title" : "Gathers information",
+                                    "code" : "5.1b",
+                                    "description" : "Gathers appropriate information to reach sound conclusions.",
+                                    "indicators" : [
+                                        "Uses a range of sources to collect all the relevant information",
+                                        "Gathers a sufficient breadth of information to reach an informed conclusion",
+                                        "Identifies where further information is required to clarify vague or confusing issues",
+                                        "Puts effort into ensuring that information gathered is reliable"
+                                        ]
+                                    }
+                                }
+                            },
+                        "UCF_CompCards_Factor-5_Dimension-2":{
+                            "name" : "UCF_CompCards_Factor-5_Dimension-2",
+                            "title" : "Creativity and Innovation",
+                            "description" : "Embraces new ideas; seeks out diverse perspectives; reassesses, experiments and brainstorms to generate ideas and insights; thinks in new and different ways to create innovative approaches and solutions.",
+                            "children" : {                     
+                                "UCF_CompCards_Factor-5_Dimension-2_Component-1" : {
+                                    "name" : "UCF_CompCards_Factor-5_Dimension-2_Component-1",
+                                    "title" : "Categorizes information",
+                                    "code" : "5.2.a",
+                                    "description" : "Creates innovative approaches.",
+                                    "indicators" : [
+                                        "Generates new ideas easily",
+                                        "Produces novel and original approaches",
+                                        "Formulates creative and imaginative ideas"
+                                        ]
+                                    },
+                                "UCF_CompCards_Factor-5_Dimension-2_Component-2" : {
+                                    "name" : "UCF_CompCards_Factor-5_Dimension-2_Component-2",
+                                    "title" : "Embraces new ideas",
+                                    "code" : "5.2.b",
+                                    "description" : "Is open to and experiments with new ideas.",
+                                    "indicators" : [
+                                        "Readily experiments with new or unconventional ideas",
+                                        "Demonstrates enthusiasm when presented with new ideas",
+                                        "Actively encourages others to produce new ideas"
+                                        ]
+                                    }
+                                }
+                            },
+                        "UCF_CompCards_Factor-5_Dimension-3":{
+                            "name" : "UCF_CompCards_Factor-5_Dimension-3",
+                            "title" : "Strategic Thinking",
+                            "description" : "Thinks broadly and considers important issues that impact success today and in the future; develops strategies to achieve critical outcomes; proactively seeks opportunities to introduce change.",
+                            "children" : {                     
+                                "UCF_CompCards_Factor-5_Dimension-3_Component-1" : {
+                                    "name" : "UCF_CompCards_Factor-5_Dimension-3_Component-1",
+                                    "title" : "Thinks broadly",
+                                    "code" : "5.3.a",
+                                    "description" : "Takes a big picture view that considers different angles and issues.",
+                                    "indicators" : [
+                                        "Demonstrates an overall view of the internal business and its interrelationships with the external environment",
+                                        "Demonstrates awareness of a very broad range of issues related to own work",
+                                        "Shows consideration of the factors not intrinsically linked to the immediate work environment"
+                                        ]
+                                    },
+                                "UCF_CompCards_Factor-5_Dimension-3_Component-2" : {
+                                    "name" : "UCF_CompCards_Factor-5_Dimension-3_Component-2",
+                                    "title" : "Considers strategic vision",
+                                    "code" : "5.3.b",
+                                    "description" : "Thinks in terms of long-term vision, goals, and strategies.",
+                                    "indicators" : [
+                                        "Demonstrates long-term thinking when setting goals",
+                                        "Proactively anticipates future trends and opportunities",
+                                        "Demonstrates a clear vision of long-term goals"
+                                        ]
+                                    },
+                                "UCF_CompCards_Factor-5_Dimension-3_Component-3" : {
+                                    "name" : "UCF_CompCards_Factor-5_Dimension-3_Component-3",
+                                    "title" : "Drives improvement",
+                                    "code" : "5.2.c",
+                                    "description" : "Identifies and pursues opportunities to improve current ways of working and implements changes.",
+                                    "indicators" : [
+                                        "Devises effective ways to implement change",
+                                        "Constantly seeks opportunities for organizational improvement",
+                                        "Improves work performance and systems by introducing new ideas",
+                                        "Encourages others to change inefficient work practices",
+                                        "Recognizes opportunities for change"
+                                        ]
+                                    }
+                                }
+                            }
+                        }
+                    },
+                "UCF_CompCards_Factor-6" : {
+                    "name" : "UCF_CompCards_Factor-6",
+                    "title" : "Organizing and Executing",
+                    "description" : "Plans ahead and works in a systematic and organized way. Follows directions and procedures. Focuses on customer satisfaction and delivers a quality service or product to the agreed standards.",
+                    "colour" : "#83bb25",
+                    "children" : {
+                        "UCF_CompCards_Factor-6_Dimension-1":{
+                            "name" : "UCF_CompCards_Factor-6_Dimension-1",
+                            "title" : "Planning and Organizing",
+                            "description" : "Sets objectives that align with team and organizational goals; develops plans, commits to timelines, and uses time effectively; anticipates, allocates, and monitors resources to deliver work requirements; documents job information.",
+                            "children" : {                     
+                                "UCF_CompCards_Factor-6_Dimension-1_Component-1" : {
+                                    "name" : "UCF_CompCards_Factor-6_Dimension-1_Component-1",
+                                    "title" : "Sets objectives",
+                                    "code" : "6.1a",
+                                    "description" : "Sets clearly defined objectives, milestones, and timelines.",
+                                    "indicators" : [
+                                        "Sets specific, clearly defined objectives",
+                                        "Specifies timelines for achieving objectives",
+                                        "Defines sub-goals to act as milestones"
+                                        ]
+                                    },
+                                "UCF_CompCards_Factor-6_Dimension-1_Component-2" : {
+                                    "name" : "UCF_CompCards_Factor-6_Dimension-1_Component-2",
+                                    "title" : "Plans ahead",
+                                    "code" : "6.1b",
+                                    "description" : "Develops detailed plans and completes tasks in a logical order.",
+                                    "indicators" : [
+                                        "Develops detailed plans before beginning a piece of work",
+                                        "Determines the order in which tasks should be completed",
+                                        "Uses plans to guide own work"
+                                        ]
+                                    },
+                                "UCF_CompCards_Factor-6_Dimension-1_Component-3" : {
+                                    "name" : "UCF_CompCards_Factor-6_Dimension-1_Component-3",
+                                    "title" : "Uses time efficiently",
+                                    "code" : "6.1c",
+                                    "description" : "Manages own time and delivers work on schedule.",
+                                    "indicators" : [
+                                        "Works quickly and efficiently",
+                                        "Delivers work on time",
+                                        "Manages own time effectively"
+                                        ]
+                                    },
+                                "UCF_CompCards_Factor-6_Dimension-1_Component-4" : {
+                                    "name" : "UCF_CompCards_Factor-6_Dimension-1_Component-4",
+                                    "title" : "Manages resources",
+                                    "code" : "6.1d",
+                                    "description" : "Monitors current resource needs and anticipates future requirements to effectively plan and allocate resources.",
+                                    "indicators" : [
+                                        "Allocates resources to meet work requirements",
+                                        "Anticipates future resourcing needs and potential resource conflicts and creates contingency plans to address them",
+                                        "Monitors whether current resources are sufficient and takes action if they are not"
+                                        ]
+                                    },
+                                "UCF_CompCards_Factor-6_Dimension-1_Component-5" : {
+                                    "name" : "UCF_CompCards_Factor-6_Dimension-1_Component-5",
+                                    "title" : "Maintains documentation",
+                                    "code" : "6.1e",
+                                    "description" : "Records project progress and organizes information so that it is easily accessed by others.",
+                                    "indicators" : [
+                                        "Maintains accurate and up-to-date documentation of own work",
+                                        "Uses appropriate systems for documenting and storing information",
+                                        "Ensures information is easily accessible to relevant others"
+                                        ]
+                                    }
+                                }
+                            },
+                        "UCF_CompCards_Factor-6_Dimension-2":{
+                            "name" : "UCF_CompCards_Factor-6_Dimension-2",
+                            "title" : "Delivering Results",
+                            "description" : "Focuses on understanding and addressing customer needs; sets high standards for work quality and quantity; delivers high productivity in a focused and timely manner; structures and prioritizes work activities; shows commitment to the organization.",
+                            "children" : {                     
+                                "UCF_CompCards_Factor-6_Dimension-2_Component-1" : {
+                                    "name" : "UCF_CompCards_Factor-6_Dimension-2_Component-1",
+                                    "title" : "Puts customers first",
+                                    "code" : "6.2.a",
+                                    "description" : "Prioritizes meeting internal and external customer needs.",
+                                    "indicators" : [
+                                        "Seeks to understand customer needs",
+                                        "Advocates for the customer's interests inside the organization",
+                                        "Delivers prompt service",
+                                        "Delivers quality service",
+                                        "Takes customer complaints seriously and acts on them appropriately"
+                                        ]
+                                    },
+                                "UCF_CompCards_Factor-6_Dimension-2_Component-2" : {
+                                    "name" : "UCF_CompCards_Factor-6_Dimension-2_Component-2",
+                                    "title" : "Works to high quality standards",
+                                    "code" : "6.2.b",
+                                    "description" : "Consistently completes tasks with a high degree of quality.",
+                                    "indicators" : [
+                                        "Produces quality work even at a very detailed level",
+                                        "Does everything possible to avoid compromising quality in own work",
+                                        "Carefully checks others' work for mistakes",
+                                        "Makes sure all work produced meets high quality standards"
+                                        ]
+                                    },
+                                "UCF_CompCards_Factor-6_Dimension-2_Component-3" : {
+                                    "name" : "UCF_CompCards_Factor-6_Dimension-2_Component-3",
+                                    "title" : "Works systematically",
+                                    "code" : "6.2.c",
+                                    "description" : "Structures and delivers own tasks systematically by considering priorities, dependencies, and time requirements.",
+                                    "indicators" : [
+                                        "Breaks down work into manageable parts, considering dependencies between tasks",
+                                        "Structures own work activities according to established priorities",
+                                        "Accurately assesses how long a task will take to complete",
+                                        "Monitors progress against deadlines and milestones",
+                                        "Maintains a constant awareness of issues that may help or hinder progress"
+                                        ]
+                                    },
+                                "UCF_CompCards_Factor-6_Dimension-2_Component-4" : {
+                                    "name" : "UCF_CompCards_Factor-6_Dimension-2_Component-4",
+                                    "title" : "Attends to multiple tasks",
+                                    "code" : "6.2.d",
+                                    "description" : "Attends to and delivers on multiple tasks effectively.",
+                                    "indicators" : [
+                                        "Attends to multiple tasks without losing focus on some of them",
+                                        "Follows multiple sources of information simultaneously",
+                                        "Delivers on parallel tasks in a timely matter"
+                                        ]
+                                    },
+                                "UCF_CompCards_Factor-6_Dimension-2_Component-5" : {
+                                    "name" : "UCF_CompCards_Factor-6_Dimension-2_Component-5",
+                                    "title" : "Stays focused",
+                                    "code" : "6.2.e",
+                                    "description" : "Concentrates on tasks over a long period of time without getting distracted.",
+                                    "indicators" : [
+                                        "Concentrates on a task over a period of time",
+                                        "Ignores distractions"
+                                        ]
+                                    },
+                                "UCF_CompCards_Factor-6_Dimension-2_Component-6" : {
+                                    "name" : "UCF_CompCards_Factor-6_Dimension-2_Component-6",
+                                    "title" : "Performs repetitive tasks",
+                                    "code" : "6.2.f",
+                                    "description" : "Carries out repetitive tasks with care and diligence.",
+                                    "indicators" : [
+                                        "Diligently carries out repetitive or routine tasks",
+                                        "Maintains concentration when carrying out routine, repetitive tasks"
+                                        ]
+                                    },
+                                "UCF_CompCards_Factor-6_Dimension-2_Component-7" : {
+                                    "name" : "UCF_CompCards_Factor-6_Dimension-2_Component-7",
+                                    "title" : "Shows commitment to the organization",
+                                    "code" : "6.2.g",
+                                    "description" : "Shows commitment to the organization and its success.",
+                                    "indicators" : [
+                                        "Speaks positively about the organization and defends it against criticisms",
+                                        "Portrays a positive image of the organization and protects its reputation against critics",
+                                        "Demonstrates belief in, and alignment to the organization's values",
+                                        "Shows loyalty to the organization"
+                                        ]
+                                    }
+                                }
+                            },
+                        "UCF_CompCards_Factor-6_Dimension-3":{
+                            "name" : "UCF_CompCards_Factor-6_Dimension-3",
+                            "title" : "Dependability",
+                            "description" : "Takes direction from others; adheres to regulations, policies, procedures, and legal obligations; is punctual and reliable; performs work in a safe and secure manner, prioritising the safety and security of individuals, materials, and information.",
+                            "children" : {                     
+                                "UCF_CompCards_Factor-6_Dimension-3_Component-1" : {
+                                    "name" : "UCF_CompCards_Factor-6_Dimension-3_Component-1",
+                                    "title" : "Accepts direction",
+                                    "code" : "6.3.a",
+                                    "description" : "Accepts direction from others willingly.",
+                                    "indicators" : [
+                                        "Co-operates with instructions willingly",
+                                        "Accepts direction without unnecessarily challenging others' authority"
+                                        ]
+                                    },
+                                "UCF_CompCards_Factor-6_Dimension-3_Component-2" : {
+                                    "name" : "UCF_CompCards_Factor-6_Dimension-3_Component-2",
+                                    "title" : "Complies with rules and regulations",
+                                    "code" : "6.3.b",
+                                    "description" : "Adheres to rules, guidelines and procedures.",
+                                    "indicators" : [
+                                        "Adheres to the organization's regulations",
+                                        "Follows policies and rules for own job"
+                                        ]
+                                    },
+                                "UCF_CompCards_Factor-6_Dimension-3_Component-3" : {
+                                    "name" : "UCF_CompCards_Factor-6_Dimension-3_Component-3",
+                                    "title" : "Attends work reliably",
+                                    "code" : "6.3.c",
+                                    "description" : "Attends work punctually and reliably, and communicates upcoming delays or absences",
+                                    "indicators" : [
+                                        "Arrives to work and meetings on time",
+                                        "Maintains a good attendance record",
+                                        "Notifies others in advance of being absent or late"
+                                        ]
+                                    },
+                                "UCF_CompCards_Factor-6_Dimension-3_Component-4" : {
+                                    "name" : "UCF_CompCards_Factor-6_Dimension-3_Component-4",
+                                    "title" : "Shows safety awareness",
+                                    "code" : "6.3.d",
+                                    "description" : "Follows safety rules and regulations.",
+                                    "indicators" : [
+                                        "Treats personal safety and the safety of others as a priority",
+                                        "Follows health and safety rules and regulations",
+                                        "Completes safety checks on materials and equipment",
+                                        "Uses materials or equipment in a safe manner"
+                                        ]
+                                    }
+                                }
+                            }
+                        }
+                    },
+                "UCF_CompCards_Factor-7" : {
+                    "name" : "UCF_CompCards_Factor-7",
+                    "title" : "Adapting and Coping",
+                    "description" : "Adapts and responds well to change. Manages pressure effectively and copes well with setbacks.",
+                    "colour" : "#006543",
+                    "children" : {
+                        "UCF_CompCards_Factor-7_Dimension-1":{
+                            "name" : "UCF_CompCards_Factor-7_Dimension-1",
+                            "title" : "Planning and Organizing",
+                            "description" : "Sets objectives that align with team and organizational goals; develops plans, commits to timelines, and uses time effectively; anticipates, allocates, and monitors resources to deliver work requirements; documents job information.",
+                            "children" : {                     
+                                "UCF_CompCards_Factor-7_Dimension-1_Component-1" : {
+                                    "name" : "UCF_CompCards_Factor-7_Dimension-1_Component-1",
+                                    "title" : "Sets objectives",
+                                    "title" : "Adaptability",
+                                    "code" : "7.1.a",
+                                    "description" : "Accepts and adapts to change.",
+                                    "indicators" : [
+                                        "Remains productive in changing environments",
+                                        "Adjusts to changes effectively"
+                                        ]
+                                    },
+                                "UCF_CompCards_Factor-7_Dimension-1_Component-2" : {
+                                    "name" : "UCF_CompCards_Factor-7_Dimension-1_Component-2",
+                                    "title" : "Copes with uncertainty",
+                                    "code" : "7.1.b",
+                                    "description" : "Works productively when roles and situations are not clearly defined.",
+                                    "indicators" : [
+                                        "Works comfortably with loosely defined tasks and roles",
+                                        "Works productively in an environment where direction or instructions are not available",
+                                        "Takes advantage of opportunities offered by ambiguous situations"
+                                        ]
+                                    },
+                                "UCF_CompCards_Factor-7_Dimension-1_Component-3" : {
+                                    "name" : "UCF_CompCards_Factor-7_Dimension-1_Component-3",
+                                    "title" : "Adapts to cultural differences",
+                                    "code" : "7.1.c",
+                                    "description" : "Is interested in and relates well with people from different cultures.",
+                                    "indicators" : [
+                                        "Communicates well with people of different cultures",
+                                        "Shows interest in learning about the characteristics of other cultures",
+                                        "Adjusts own behavior based on the perspectives of other cultures"
+                                        ]
+                                    }
+                                }
+                            },
+                        "UCF_CompCards_Factor-7_Dimension-2":{
+                            "name" : "UCF_CompCards_Factor-7_Dimension-2",
+                            "title" : "Resilience",
+                            "description" : "Works productively under pressure; maintains a positive outlook; controls emotions; handles failure or criticism well and learns from it.",
+                            "children" : {                     
+                                "UCF_CompCards_Factor-7_Dimension-2_Component-1" : {
+                                    "name" : "UCF_CompCards_Factor-7_Dimension-2_Component-1",
+                                    "title" : "Thrives under pressure",
+                                    "code" : "7.2.a",
+                                    "description" : "Keeps things in perspective and stays calm and focused under pressure.",
+                                    "indicators" : [
+                                        "Remains calm and objective under pressure",
+                                        "Retains focus and concentration when under pressure at work",
+                                        "Works productively in a high pressure environment"
+                                        ]
+                                    },
+                                "UCF_CompCards_Factor-7_Dimension-2_Component-2" : {
+                                    "name" : "UCF_CompCards_Factor-7_Dimension-2_Component-2",
+                                    "title" : "Controls emotions",
+                                    "code" : "7.2.b",
+                                    "description" : "Keeps negative emotions under control.",
+                                    "indicators" : [
+                                        "Keeps emotions under control during challenging situations or when dealing with difficult issues",
+                                        "Does not openly show frustration or dissatisfaction"
+                                        ]
+                                    },
+                                "UCF_CompCards_Factor-7_Dimension-2_Component-3" : {
+                                    "name" : "UCF_CompCards_Factor-7_Dimension-2_Component-3",
+                                    "title" : "Copes with setbacks and criticism",
+                                    "code" : "7.2.c",
+                                    "description" : "Stays positive when facing difficulties rather than dwelling on negative events.",
+                                    "indicators" : [
+                                        "Displays optimism in the face of negative situations",
+                                        "Keeps difficulties in perspective",
+                                        "Moves on quickly from setbacks or criticism",
+                                        "Accepts negative feedback without becoming hostile or overly-defensive"
+                                        ]
+                                    }
+                                }
+                            }
+                        }
+                    },
+                "UCF_CompCards_Factor-8" : {
+                    "name" : "UCF_CompCards_Factor-8",
+                    "title" : "Enterprising and Performing",
+                    "description" : "Focuses on results and achieving personal work objectives. Works best when work is related closely to results and the impact of personal efforts is obvious. Shows an understanding of business, commerce and finance. Seeks opportunity for self-development and career advancement.",
+                    "colour" : "#8476b5",
+                    "children" : {
+                        "UCF_CompCards_Factor-8_Dimension-1":{
+                            "name" : "UCF_CompCards_Factor-8_Dimension-1",
+                            "title" : "Initiative",
+                            "description" : "Tackles demanding goals enthusiastically; seeks out progressively more difficult assignments and roles; proactively identifies and acts on opportunities and improvement areas; accomplishes work autonomously; strives to outperform others.",
+                            "children" : {                     
+                                "UCF_CompCards_Factor-8_Dimension-1_Component-1" : {
+                                    "name" : "UCF_CompCards_Factor-8_Dimension-1_Component-1",
+                                    "title" : "Strives to achieve",
+                                    "code" : "8.1.a",
+                                    "description" : "Sets demanding goals and works hard to achieve them.",
+                                    "indicators" : [
+                                        "Seeks and tackles demanding goals",
+                                        "Sees tasks through to completion",
+                                        "Invests effort into achieving goals at work"
+                                        ]
+                                    },
+                                "UCF_CompCards_Factor-8_Dimension-1_Component-2" : {
+                                    "name" : "UCF_CompCards_Factor-8_Dimension-1_Component-2",
+                                    "title" : "Takes action",
+                                    "code" : "8.1.b",
+                                    "description" : "Seeks additional work and proactively takes on new responsibilities.",
+                                    "indicators" : [
+                                        "Seeks new tasks in order to keep busy",
+                                        "Takes on new responsibilities proactively"
+                                        ]
+                                    },
+                                "UCF_CompCards_Factor-8_Dimension-1_Component-3" : {
+                                    "name" : "UCF_CompCards_Factor-8_Dimension-1_Component-3",
+                                    "title" : "Focuses on self-development",
+                                    "code" : "8.1.c",
+                                    "description" : "Seeks opportunities to gain experience, improve performance, and achieve career goals.",
+                                    "indicators" : [
+                                        "Actively seeks and incorporates feedback and suggestions for improvement",
+                                        "Identifies personal development needs and takes action to improve",
+                                        "Learns from mistakes and failures"
+                                        ]
+                                    },
+                                "UCF_CompCards_Factor-8_Dimension-1_Component-4" : {
+                                    "name" : "UCF_CompCards_Factor-8_Dimension-1_Component-4",
+                                    "title" : "Works autonomously",
+                                    "code" : "8.1.d",
+                                    "description" : "Works well without supervision or engaging others.",
+                                    "indicators" : [
+                                        "Demonstrates confidence when working autonomously",
+                                        "Asks for help only when necessary",
+                                        "Works on tasks without the need for supervision"
+                                        ]
+                                    },
+                                "UCF_CompCards_Factor-8_Dimension-1_Component-5" : {
+                                    "name" : "UCF_CompCards_Factor-8_Dimension-1_Component-5",
+                                    "title" : "Takes action",
+                                    "code" : "8.1.e",
+                                    "description" : "Thrives on competition and tries to outperform others.",
+                                    "indicators" : [
+                                        "Works productively in a competitive environment",
+                                        "Strives to outperform others",
+                                        "Encourages competition with others"
+                                        ]
+                                    }
+                                }
+                            },
+                        "UCF_CompCards_Factor-8_Dimension-2":{
+                            "name" : "UCF_CompCards_Factor-8_Dimension-2",
+                            "title" : "Commercial Thinking",
+                            "description" : "Considers revenue, cost, and risk factors that drive organizational performance; identifies and secures new business; optimizes resources to deliver more with less; manages and mitigates risks; maintains awareness of external factors impacting the business.",
+                            "children" : {                     
+                                "UCF_CompCards_Factor-8_Dimension-2_Component-1" : {
+                                    "name" : "UCF_CompCards_Factor-8_Dimension-2_Component-1",
+                                    "title" : "Considers financial impact",
+                                    "code" : "8.2.a",
+                                    "description" : "Focuses on activities that will maximize financial or business benefit.",
+                                    "indicators" : [
+                                        "Demonstrates awareness of revenue, cost, and risk factors that drive organizational performance",
+                                        "Prioritizes financial considerations when making decisions",
+                                        "Focuses on activities which will bring the greatest financial or business benefit"
+                                        ]
+                                    },
+                                "UCF_CompCards_Factor-8_Dimension-2_Component-2" : {
+                                    "name" : "UCF_CompCards_Factor-8_Dimension-2_Component-2",
+                                    "title" : "Develops new business opportunities",
+                                    "code" : "8.2.b",
+                                    "description" : "Finds and secures leads for new business to drive growth.",
+                                    "indicators" : [
+                                        "Identifies new and promising business opportunities",
+                                        "Pursues and secures new business to increase revenue"
+                                        ]
+                                    },
+                                "UCF_CompCards_Factor-8_Dimension-2_Component-3" : {
+                                    "name" : "UCF_CompCards_Factor-8_Dimension-2_Component-3",
+                                    "title" : "Uses resources efficiently",
+                                    "code" : "8.2.c",
+                                    "description" : "Uses resources in a cost effective manner, ensuring little waste.",
+                                    "indicators" : [
+                                        "Uses resources in a cost effective way, including facilities, materials, and equipment",
+                                        "Tries to find the most economical way to complete work"
+                                        ]
+                                    },
+                                "UCF_CompCards_Factor-8_Dimension-2_Component-4" : {
+                                    "name" : "UCF_CompCards_Factor-8_Dimension-2_Component-4",
+                                    "title" : "Manages commercial risks",
+                                    "code" : "8.2.d",
+                                    "description" : "Considers and manages risks.",
+                                    "indicators" : [
+                                        "Demonstrates an awareness of factors that could put the organization at risk (e.g., legal, commercial, or operational)",
+                                        "Makes choices that help manage and mitigate risks",
+                                        "Balances opportunities with risks to drive business growth"
+                                        ]
+                                    },
+                                "UCF_CompCards_Factor-8_Dimension-2_Component-5" : {
+                                    "name" : "UCF_CompCards_Factor-8_Dimension-2_Component-5",
+                                    "title" : "Monitors markets and competitors",
+                                    "code" : "8.2.e",
+                                    "description" : "Stays up-to-date with developments in own field and is aware of external factors impacting the business.",
+                                    "indicators" : [
+                                        "Demonstrates an awareness of new developments in own industry",
+                                        "Shows knowledge of competitor activities and their impact on the business",
+                                        "Displays an awareness of market factors that can have an impact on the business"
+                                        ]
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        
+        }
+    } 
+}

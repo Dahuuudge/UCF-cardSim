@@ -1,0 +1,229 @@
+body {
+  height: 100%;
+  font-family: sans-serif;
+}
+body #cardTemplates {
+  display: none;
+}
+body #cardTemplates #box {
+  font-size: 26px;
+  display: none;
+}
+body #workArea {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  background-color: antiquewhite;
+  height: 140%;
+  padding: 1em;
+}
+body #workArea #sortResults {
+  position: absolute;
+  top: 4em;
+  left: 2em;
+  display: grid;
+  grid-template-columns: 140px 240px;
+}
+body #workArea #sortResults > * {
+  margin: 0.5em 0;
+}
+body #workArea #sortResults h3 {
+  grid-column-start: 1;
+  grid-column-end: 3;
+  margin-bottom: 0.2em;
+}
+body #workArea #sortResults h4 {
+  text-align: right;
+  font-size: 1em;
+  font-weight: 500;
+  padding-right: 30px;
+}
+body #workArea #sortResults h5 {
+  font-size: 1em;
+  font-weight: 200;
+}
+body #workArea #sortResults ul {
+  padding-left: 1em;
+}
+body #workArea #sortResults ul li {
+  margin-bottom: 0.6em;
+}
+body #workArea #sortResults ul li .compTitle {
+  font-weight: 500;
+}
+body #workArea #sortResults ul li .compRef {
+  font-weight: 200;
+}
+body #workArea h1 {
+  font-size: 1.6em;
+  margin: 0;
+}
+body #workArea #deckStart #UCF_SortCards {
+  display: grid;
+  grid-template-rows: repeat(4, 122px);
+  grid-row-gap: 16px;
+  margin: 0 auto;
+  padding: 10px 490px;
+}
+body #workArea #deckStart #UCF_SortCards > div {
+  display: grid;
+  grid-template-columns: 122px repeat(5, 218px);
+  grid-column-gap: 16px;
+}
+body #workArea #deckStart #UCF_CompCards {
+  display: grid;
+  grid-template-columns: repeat(8, 218px);
+  grid-column-gap: 16px;
+  padding: 50px 20px;
+  position: relative;
+  transition: top 2s;
+  top: 0;
+}
+body #workArea #deckStart #UCF_CompCards > div {
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: repeat(4, 122px);
+  grid-row-gap: 16px;
+}
+body #workArea .cardBlock {
+  width: 218px;
+  height: 122px;
+  position: relative;
+}
+body #workArea .cardBlock.sortCard, body #workArea .cardBlock.factorCard, body #workArea .cardBlock.dimentionCard {
+  border: 1px solid #000;
+}
+body #workArea .cardBlock.sortCard .factorColfill {
+  background: #aaa;
+}
+body #workArea .cardBlock.sortCard .factorColfill .text_1, body #workArea .cardBlock.sortCard .factorColfill .text_2 {
+  text-align: center;
+}
+body #workArea .cardBlock.sortCard .factorColfill .text_1 {
+  margin: 3em 0 0;
+}
+body #workArea .cardBlock.sortCard .factorColfill .text_2 {
+  margin: 2.4em 0 0;
+}
+body #workArea .cardBlock.sortCard .factorColfill .vals {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  left: -8px;
+}
+body #workArea .cardBlock.sortCard .factorColfill .vals > * {
+  margin: 0.6em 0;
+  padding: 0 0.4em;
+}
+body #workArea .cardBlock.sortCard .conjunc {
+  display: none;
+  width: 10px;
+  padding: 0;
+  font-weight: 200;
+}
+body #workArea .cardBlock.sortCard .reciver {
+  padding: 0;
+  margin: 0;
+  position: relative;
+  width: 218px;
+  height: 100%;
+  z-index: 10;
+  background: transparent;
+}
+body #workArea .cardBlock.sortCard .reciver .cardBlock {
+  padding: 0;
+  margin: 0;
+  position: relative;
+  top: 122px;
+  left: -1px;
+}
+body #workArea .cardBlock.factorCard .factorColfill, body #workArea .cardBlock.sortCard .factorColfill {
+  height: 122px;
+}
+body #workArea .cardBlock.factorCard > .cardBodyText, body #workArea .cardBlock.sortCard > .cardBodyText {
+  top: 1.5em;
+  color: #fff;
+  height: 94px;
+}
+body #workArea .cardBlock.factorCard footer, body #workArea .cardBlock.sortCard footer {
+  bottom: 0;
+}
+body #workArea .cardBlock.dimentionCard .factorColfill {
+  height: 1.8em;
+}
+body #workArea .cardBlock.dimentionCard .cardBodyText {
+  background: #fff;
+  top: 1.8em;
+  height: 93px;
+}
+body #workArea .cardBlock.dimentionCard footer {
+  bottom: 4px;
+}
+body #workArea .cardBlock div {
+  position: absolute;
+}
+body #workArea .cardBlock div .title {
+  font-size: 0.8em;
+  margin: 0.6em 0;
+}
+body #workArea .cardBlock div > * {
+  padding: 0 0.6em;
+}
+body #workArea .cardBlock div.factorColfill {
+  width: 100%;
+}
+body #workArea .cardBlock div.factorColfill h3 {
+  color: #fff;
+  font-size: 0.7em;
+}
+body #workArea .cardBlock div.cardBodyText p.description {
+  margin: 0.6em 0;
+  font-size: 0.6em;
+}
+body #workArea .cardBlock div.cardBodyText footer {
+  position: absolute;
+  width: 206px;
+  display: flex;
+  justify-content: space-between;
+  height: 2em;
+  font-size: 0.6em;
+}
+body #workArea .cardBlock div.cardBodyText footer p.index {
+  width: 14px;
+}
+body #workArea .cardBlock div.cardBodyText footer p.cardRef {
+  width: 14px;
+  text-align: right;
+}
+body #workArea .cardBlock div.cardBodyText footer p.sortType {
+  width: 200px;
+  text-align: center;
+}
+body #workArea #dropZones artical {
+  width: 218px;
+  height: 122px;
+  border: 1px solid #000;
+}
+body #workArea #dropZones #sortArea artical {
+  position: absolute;
+  top: 200px;
+}
+body #workArea #dropZones #sortArea #sa1 {
+  left: 218px;
+}
+body #workArea #dropZones #sortArea #sa2 {
+  left: 436px;
+}
+body #workArea #dropZones #sortArea #sa3 {
+  left: 654px;
+}
+body #workArea #dropZones #cardArea {
+  position: absolute;
+  top: 400px;
+}
+body #workArea #dropZones #cardArea artical {
+  float: left;
+}
+
+/*# sourceMappingURL=default.css.map */

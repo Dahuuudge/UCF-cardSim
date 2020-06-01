@@ -1,0 +1,291 @@
+$cardWidth: 218px;
+$cardHeight: 122px;
+$gridGap: 16px;
+
+body {
+    height: 100%;
+    
+    font-family: sans-serif;
+    #cardTemplates {
+        display: none;
+        
+        
+        #box{
+            font-size: 26px;
+            display: none
+        }
+        #factorCard {
+            //.title { }
+            
+        }
+        
+        
+    }
+    
+    
+    #workArea{
+        position: absolute;
+        top: 0;
+        right:  0;
+        left: 0;
+        background-color:antiquewhite;
+        height: 140%;
+        padding: 1em;
+        
+        #sortResults{
+            position: absolute;
+            top: 4em;
+            left:2em;
+            display: grid;
+            grid-template-columns: 140px 240px;
+            
+            > *{
+                margin: 0.5em 0;
+            }
+            
+            h3{
+                grid-column-start: 1;
+                grid-column-end: 3;
+                margin-bottom: 0.2em;
+            }
+            h4{
+                text-align: right;
+                font-size: 1em;
+                font-weight: 500;
+                padding-right: 30px;
+            }
+            h5{
+                font-size: 1em;
+                font-weight: 200;
+            }
+            ul{
+                padding-left: 1em;
+                li{
+                    margin-bottom: 0.6em;
+                    .compTitle{
+                        font-weight: 500;
+                        
+                    }
+                    .compRef{
+                        font-weight: 200;
+                    }
+                }
+            }
+        }
+        
+        h1{
+            font-size: 1.6em;
+            margin: 0;    
+        }
+        
+    
+        
+        #deckStart{
+            #UCF_SortCards{
+                display: grid;
+                grid-template-rows: repeat(4, $cardHeight);
+                grid-row-gap: $gridGap;     
+                margin: 0 auto;
+                padding: 10px 490px;           
+
+                > div{
+                    display: grid;
+                    grid-template-columns: $cardHeight repeat(5, $cardWidth);
+                    grid-column-gap: $gridGap;
+                } 
+            }
+            
+            #UCF_CompCards{
+                display: grid;
+                grid-template-columns: repeat(8, $cardWidth);
+                grid-column-gap: $gridGap;
+                padding: 50px 20px;
+                position: relative;
+                transition: top 2s;
+                top: 0;
+                
+                > div{
+                    display: grid;
+                    grid-template-columns: auto;
+                    grid-template-rows: repeat(4, $cardHeight);
+                    grid-row-gap: $gridGap;
+                }
+            }
+        }
+        .cardBlock {
+            width: $cardWidth;
+            height: $cardHeight;
+            position: relative;
+            &.sortCard, &.factorCard, &.dimentionCard{
+                border: 1px solid #000;  
+            }
+        
+           
+            
+            // HTML Card css test
+            
+            &.sortCard{
+                .factorColfill{
+                    background: #aaa;
+                    
+                    .text_1, .text_2{
+                        text-align: center;
+                       
+                    }
+                    .text_1{
+                         margin: 3em 0 0; 
+                    }
+                    .text_2{
+                         margin: 2.4em 0 0; 
+                    }
+                    .vals{
+                        display: flex;
+                        justify-content: center;
+                        width: 100%;
+                        left: -$gridGap/2;
+                        
+                        > *{
+                            //flex-basis: auto;
+                            margin: 0.6em 0;
+                           padding: 0 0.4em;
+                        }
+                    }
+                    
+                    
+                }
+                 .conjunc{
+                    display: none;
+                     width: 10px;
+                     padding: 0;
+                     //flex-basis: 0;
+                     font-weight: 200;
+                }
+                .reciver{
+                     padding: 0;
+                    margin: 0;
+                        position: relative;
+                        width: $cardWidth;
+                        height: 100%;
+//                        right: 2px;
+//                        top:-2px;
+                        z-index: 10;
+                        
+                        background: transparent;
+//                    background: red;
+//                        opacity:0.5;
+//                        border: 1px solid transparent;
+                    .cardBlock{
+                          padding: 0;
+                    margin: 0;
+                        position: relative;
+                        
+                        top:  $cardHeight;
+                        left: -1px;
+                        }
+                    }
+
+            }
+            
+            &.factorCard, &.sortCard{
+                .factorColfill{
+                    height: $cardHeight;
+                }
+                
+                >.cardBodyText{
+                    top: 1.5em;
+                    color: #fff;
+                    height: $cardHeight - 28px;
+                }
+                footer {
+                     bottom: 0;
+                }
+            }
+            
+            &.dimentionCard{
+                .factorColfill{
+                    height: 1.8em;
+                }
+               .cardBodyText{
+                   background: #fff;
+                   top: 1.8em;
+                   height: $cardHeight - 29px;
+                }
+                  footer {
+                     bottom: 4px;
+                }
+            }
+            
+            div{
+                position: absolute;
+                .title {
+                    font-size: 0.8em;
+                    margin: 0.6em 0;
+                }
+                
+                >*{
+                    padding: 0 0.6em;
+                }
+                
+                &.factorColfill{
+                    width: 100%;
+                    h3{
+                        color: #fff;
+                        font-size: 0.7em
+                    }
+                }
+                &.cardBodyText{
+                    
+                    p.description{
+                        margin: 0.6em 0;
+                        font-size: 0.6em;
+                    }
+                    footer{
+                        position: absolute;
+                        width: $cardWidth - 12px;
+                        display: flex;
+                        justify-content:space-between;
+                        height: 2em;
+                        font-size: 0.6em;
+                        p.index{width: 14px; }
+                        p.cardRef{ width: 14px; text-align: right;}
+                        p.sortType{ width: 200px; text-align: center;}
+                    }
+                    
+                }
+            }
+            
+            
+        }
+        
+        #dropZones {
+            
+            artical {
+                width: $cardWidth;
+                height: $cardHeight;
+                border: 1px solid #000; 
+            }
+            #sortArea{
+                artical {
+                    position: absolute;
+                    top: 200px;
+                }
+                #sa1{
+                     left: $cardWidth;
+                }
+                #sa2{
+                     left: $cardWidth * 2;
+                }
+                #sa3{
+                     left: $cardWidth * 3;
+                }
+            }
+            #cardArea{
+                position: absolute;
+                top: 400px;
+                artical {
+                    float:left;
+                }
+            }    
+        }
+    }
+}
