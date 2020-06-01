@@ -94,3 +94,62 @@ let xmlhttp = new XMLHttpRequest(),
     xmlhttp.send();
 
 }(window.document));
+
+
+
+init() {
+                        let hyai = this.name.split("."),
+                            typeNo = hyai.length,
+                            parent = (less) => { less.pop(); 
+                                                less.join('.');
+                                               return less},
+                            componentList = [],
+                            dimention_components;
+                        
+                        function traversModleTo(n){
+                            const strHead = system.modle["UCF_0"];
+                            
+                        }
+                        
+                        switch(typeNo) {
+                            case 1:
+                                console.log("make the Deck");
+                                break;
+                            case 2:
+                                console.log("   conpatancy Cards " + this.name);
+                                break;
+                            case 3:
+                                console.log("       stop appending " + this.name);
+                                break;
+                            case 4:
+                                // please make this more elegnt
+                               system.modle.UCF_0.children[hyai[0]+"."+hyai[1]].children[hyai[0]+"."+hyai[1]+"."+hyai[2]].children[hyai[0]+"."+hyai[1]+"."+hyai[2]+"."+hyai[3]].components = [];
+                                //console.log("apepend the following components to: " + srt.name);
+                                //this.componentPoint = [];
+                                break;
+                            case 5:
+                                let indicator = {
+                                    title: this.title,
+                                    code: this.code,
+                                    description: this.description,
+                                    indicators: this.indicators
+                                };
+                                //console.log("               Component " + this.name + " patent being " + temp);
+                                system.modle.UCF_0.children[hyai[0]+"."+hyai[1]].children[hyai[0]+"."+hyai[1]+"."+hyai[2]].children[hyai[0]+"."+hyai[1]+"."+hyai[2]+"."+hyai[3]].components.push(indicator);
+                                break;
+                            default:
+                                console.log("           !!off teh fricken Chart?!");
+                                break;
+                        }
+                        
+                        let makeCard = this.name.slice(-1)/1;
+                        this.pgEle(makeCard? true:false);
+
+                    }
+
+
+
+                            //model[enityName].init();
+                            
+//                            if(model[enityName].parent) console.log(model[enityName].name + " parent is " + model[enityName].parent.name);
+//                            parent = model[enityName];

@@ -1,7 +1,7 @@
 {
 "UCF": {
     "name" : "UCF",
-    "title" : "UCF_deck",
+    "title" : "UCF deck",
     "description" : "This model provides an online reference to the newly updated Universal Competency Framework (UCF).",
     "children" : {
         
@@ -11,7 +11,7 @@
             "children" : {
                 "UCF_SortCards_FrequencySort" : {
                     "name" : "UCF_SortCards_FrequencySort",
-                    "title" : "Frequency_Sort",
+                    "title" : "Frequency Sort",
                     "text_1" : "Competencies that are",
                     "children":{
                         "UCF_SortCards_FrequencySort_FS-1" : {
@@ -34,7 +34,7 @@
                     },
                 "UCF_SortCards_ComplexitySort" : {
                     "name" : "UCF_SortCards_ComplexitySort",
-                    "title" : "Complexity_Sort",
+                    "title" : "Complexity Sort",
                     "text_1" : "Competencies that are",
                     "children":{
                         "UCF_SortCards_ComplexitySort_CS-1" : {
@@ -85,7 +85,7 @@
                     },
                 "UCF_SortCards_AssessmentSort" : {
                     "name" : "UCF_SortCards_AssessmentSort",
-                    "title" : "Assessment_Sort",
+                    "title" : "Assessment Sort",
                     "text_1" : "Competencies that ",
                     "children":{
                         "UCF_SortCards_AssessmentSort_AS-1" : {
@@ -126,19 +126,19 @@
             "children" : {
                 "UCF_CompCards_Factor-1" : {
                     "name" : "UCF_CompCards_Factor-1",
-                    "title" : "Leading_and_Deciding",
+                    "title" : "Leading and Deciding",
                     "description" : "Takes control and exercises leadership, initiates action, gives direction and takes responsibility.",
                     "colour" : "#009FE3",
                     "children" : {
                         "UCF_CompCards_Factor-1_Dimension-1":{
                             "name" : "UCF_CompCards_Factor-1_Dimension-1",
-                            "title" : "Decision_Making",
+                            "title" : "Decision Making",
                             "description" : "Makes prompt decisions, even when they involve risk; makes difficult decisions, even when they involve tough choices; makes well|informed and considered decisions, and takes responsibility for results.",
 
                             "children" : {                     
                                 "UCF_CompCards_Factor-1_Dimension-1_Component-1" : {
                                     "name" : "UCF_CompCards_Factor-1_Dimension-1_Component-1",
-                                    "title" : "Makes_quick_decisions",
+                                    "title" : "Makes quick decisions",
                                     "code" : "1.1a",
                                     "description" : "Acts quickly and makes timely decisions, even ones involving risk.",
                                     "indicators" : [
@@ -149,7 +149,7 @@
                                     },
                                 "UCF_CompCards_Factor-1_Dimension-1_Component-2" : {
                                     "name" : "UCF_CompCards_Factor-1_Dimension-1_Component-2",
-                                    "title" : "Makes_difficul_decisions",
+                                    "title" : "Makes difficul decisions",
                                     "code" : "1.1b",
                                     "description" : "Makes difficult decisions and is not deterred by opposition.",
                                     "indicators" : [
@@ -160,7 +160,7 @@
                                     },
                                 "UCF_CompCards_Factor-1_Dimension-1_Component-3" : {
                                     "name" : "UCF_CompCards_Factor-1_Dimension-1_Component-3",
-                                    "title" : "Makes_considered_decisions",
+                                    "title" : "Makes considered decisions",
                                     "code" : "1.1c",
                                     "description" : "Makes informed and well|considered decisions.",
                                     "indicators" : [
@@ -171,7 +171,7 @@
                                     },
                                 "UCF_CompCards_Factor-1_Dimension-1_Component-4" : {
                                     "name" : "UCF_CompCards_Factor-1_Dimension-1_Component-4",
-                                    "title" : "Takes_responsibility",
+                                    "title" : "Takes responsibility",
                                     "code" : "1.1d",
                                     "description" : "Takes accountability for decisions made and accepts responsibility when things go wrong.",
                                     "indicators" : [
@@ -189,7 +189,7 @@
                             "children" : {                     
                                 "UCF_CompCards_Factor-1_Dimension-2_Component-1" : {
                                     "name" : "UCF_CompCards_Factor-1_Dimension-2_Component-1",
-                                    "title" : "Defines_roles_and_responsibilities",
+                                    "title" : "Defines roles and responsibilities",
                                     "code" : "1.2a",
                                     "description" : "Defines responsibilities and task priorities for others. ",
                                     "indicators" : [
@@ -199,7 +199,7 @@
                                     },
                                 "UCF_CompCards_Factor-1_Dimension-2_Component-2" : {
                                     "name" : "UCF_CompCards_Factor-1_Dimension-2_Component-2",
-                                    "title" : "Monitors_performance",
+                                    "title" : "Monitors performance",
                                     "code" : "1.2b",
                                     "description" : "Monitors others' progress and directly addresses performance issues.",
                                     "indicators" : [
@@ -209,7 +209,7 @@
                                     },
                                 "UCF_CompCards_Factor-1_Dimension-2_Component-3" : {
                                     "name" : "UCF_CompCards_Factor-1_Dimension-2_Component-3",
-                                    "title" : "Provides_informal_feedback",
+                                    "title" : "Provides informal feedback",
                                     "code" : "1.2c",
                                     "description" : "Offers constructive and timely informal feedback.",
                                     "indicators" : [
@@ -220,7 +220,7 @@
                                     },
                                 "UCF_CompCards_Factor-1_Dimension-2_Component-4" : {
                                     "name" : "UCF_CompCards_Factor-1_Dimension-2_Component-4",
-                                    "title" : "Coordinates_others’_work",
+                                    "title" : "Coordinates others’ work",
                                     "code" : "1.2d",
                                     "description" : "Takes ownership of organizing and coordinating others'work.",
                                     "indicators" : [
@@ -231,7 +231,7 @@
                                     },
                                 "UCF_CompCards_Factor-1_Dimension-2_Component-5" : {
                                     "name" : "UCF_CompCards_Factor-1_Dimension-2_Component-5",
-                                    "title" : "Motivates_and_empowers_others",
+                                    "title" : "Motivates and empowers others",
                                     "code" : "1.2e",
                                     "description" : "Inspires others to strive for success and achieve goals.",
                                     "indicators" : [
@@ -242,7 +242,7 @@
                                     },
                                 "UCF_CompCards_Factor-1_Dimension-2_Component-6" : {
                                     "name" : "UCF_CompCards_Factor-1_Dimension-2_Component-6",
-                                    "title" : "Supports_and_coaches_others",
+                                    "title" : "Supports and coaches others",
                                     "code" : "1.2f",
                                     "description" : "Coaches and develops others.",
                                     "indicators" : [
@@ -253,7 +253,7 @@
                                     },
                                 "UCF_CompCards_Factor-1_Dimension-2_Component-7" : {
                                     "name" : "UCF_CompCards_Factor-1_Dimension-2_Component-7",
-                                    "title" : "Identifies_potential",
+                                    "title" : "Identifies potential",
                                     "code" : "1.2g",
                                     "description" : "Accurately judges the capability and potential of others.",
                                     "indicators" : [
@@ -263,7 +263,7 @@
                                     },
                                 "UCF_CompCards_Factor-1_Dimension-2_Component-8" : {
                                     "name" : "UCF_CompCards_Factor-1_Dimension-2_Component-8",
-                                    "title" : "Rewards_performance",
+                                    "title" : "Rewards performance",
                                     "code" : "1.2h",
                                     "description" : "Uses rewards fairly to recognize performance.",
                                     "indicators" : [
