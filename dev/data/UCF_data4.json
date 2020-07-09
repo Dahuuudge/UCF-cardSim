@@ -14,20 +14,20 @@
                     "title" : "Frequency Sort",
                     "text_1" : "Competencies that are",
                     "children":{
-                        "UCF_SortCards_FrequencySort_FS-1" : {
-                            "name" : "UCF_SortCards_FrequencySort_FS-1",
+                        "UCF_SortCards_FrequencySort_FS1" : {
+                            "name" : "UCF_SortCards_FrequencySort_FS1",
                             "val_1" : "Frequently Demonstrated"
                             },
-                        "UCF_SortCards_FrequencySort_FS-2" : {
-                            "name" : "UCF_SortCards_FrequencySort_FS-2",
+                        "UCF_SortCards_FrequencySort_FS2" : {
+                            "name" : "UCF_SortCards_FrequencySort_FS2",
                             "val_1" : "Sometimes Demonstrated"
                             },
-                        "UCF_SortCards_FrequencySort_FS-3" : {
-                            "name" : "UCF_SortCards_FrequencySort_FS-3",
+                        "UCF_SortCards_FrequencySort_FS3" : {
+                            "name" : "UCF_SortCards_FrequencySort_FS3",
                             "val_1" : "Seldom Demonstrated"
                             },
-                        "UCF_SortCards_FrequencySort_FS-4" : {
-                            "name" : "UCF_SortCards_FrequencySort_FS-4",
+                        "UCF_SortCards_FrequencySort_FS4" : {
+                            "name" : "UCF_SortCards_FrequencySort_FS4",
                             "val_1" : "Never Demonstrated"
                             }
                         }
@@ -37,20 +37,20 @@
                     "title" : "Complexity Sort",
                     "text_1" : "Competencies that are",
                     "children":{
-                        "UCF_SortCards_ComplexitySort_CS-1" : {
-                            "name" : "UCF_SortCards_ComplexitySort_CS-1",
+                        "UCF_SortCards_ComplexitySort_CS1" : {
+                            "name" : "UCF_SortCards_ComplexitySort_CS1",
                             "val_1" : "Highly Complex", 
                             "val_2" : "Very Difficult", 
                             "join" : "or"
                             },
-                        "UCF_SortCards_ComplexitySort_CS-2" : {
-                            "name" : "UCF_SortCards_ComplexitySort_CS-2",
+                        "UCF_SortCards_ComplexitySort_CS2" : {
+                            "name" : "UCF_SortCards_ComplexitySort_CS2",
                             "val_1" : "Moderately Complex", 
                             "val_2" : "Difficult", 
                             "join" : "or"
                             },
-                        "UCF_SortCards_ComplexitySort_CS-3" : {
-                            "name" : "UCF_SortCards_ComplexitySort_CS-3",
+                        "UCF_SortCards_ComplexitySort_CS3" : {
+                            "name" : "UCF_SortCards_ComplexitySort_CS3",
                             "val_1" : "Relatively Simple", 
                             "val_2" : "Easy", 
                             "join" : "or"
@@ -63,22 +63,22 @@
                     "text_1" : "Competencies that are",
                     "text_2" : "for job success",
                     "children":{
-                        "UCF_SortCards_ImportanceSort_IS-1" : {
-                            "name" : "UCF_SortCards_ImportanceSort_IS-1",
+                        "UCF_SortCards_ImportanceSort_IS1" : {
+                            "name" : "UCF_SortCards_ImportanceSort_IS1",
                             "val_1" : "Essential", 
                             "val_2" : "Critical", 
                              "join" : "or"
                             },
-                        "UCF_SortCards_ImportanceSort_IS-2" : {
-                            "name" : "UCF_SortCards_ImportanceSort_IS-2",
+                        "UCF_SortCards_ImportanceSort_IS2" : {
+                            "name" : "UCF_SortCards_ImportanceSort_IS2",
                             "val_1" : "Desirable"
                             },
-                        "UCF_SortCards_ImportanceSort_IS-3" : {
-                            "name" : "UCF_SortCards_ImportanceSort_IS-3",
+                        "UCF_SortCards_ImportanceSort_IS3" : {
+                            "name" : "UCF_SortCards_ImportanceSort_IS3",
                             "val_1" : "Less Relevant"
                             },
-                        "UCF_SortCards_ImportanceSort_IS-4" : {
-                            "name" : "UCF_SortCards_ImportanceSort_IS-4",
+                        "UCF_SortCards_ImportanceSort_IS4" : {
+                            "name" : "UCF_SortCards_ImportanceSort_IS4",
                             "val_1" : "Not Relevant"
                             }
                         }
@@ -88,30 +88,30 @@
                     "title" : "Assessment Sort",
                     "text_1" : "Competencies that ",
                     "children":{
-                        "UCF_SortCards_AssessmentSort_AS-1" : {
-                            "name" : "UCF_SortCards_AssessmentSort_AS-1",
+                        "UCF_SortCards_AssessmentSort_AS1" : {
+                            "name" : "UCF_SortCards_AssessmentSort_AS1",
                             "textMod" : "are an",
                             "val_1" : "Outstanding Strength"
                             },
-                        "UCF_SortCards_AssessmentSort_AS-2" : {
-                            "name" : "UCF_SortCards_AssessmentSort_AS-2",
+                        "UCF_SortCards_AssessmentSort_AS2" : {
+                            "name" : "UCF_SortCards_AssessmentSort_AS2",
                             "textMod" : "are a",
                             "val_1" : "Strength"
                             },
-                        "UCF_SortCards_AssessmentSort_AS-3" : {
-                            "name" : "UCF_SortCards_AssessmentSort_AS-3",
+                        "UCF_SortCards_AssessmentSort_AS3" : {
+                            "name" : "UCF_SortCards_AssessmentSort_AS3",
                             "textMod" : "are",
                             "val_1" : "Satisfactory", 
                             "val_2" : "OK",
                              "join" : "or"
                             },
-                        "UCF_SortCards_AssessmentSort_AS-4" : {
-                            "name" : "UCF_SortCards_AssessmentSort_AS-4",
+                        "UCF_SortCards_AssessmentSort_AS4" : {
+                            "name" : "UCF_SortCards_AssessmentSort_AS4",
                             "textMod" : "require",
                             "val_1" : "Some Development"
                             },
-                        "UCF_SortCards_AssessmentSort_AS-5" : {
-                            "name" : "UCF_SortCards_AssessmentSort_AS-5",
+                        "UCF_SortCards_AssessmentSort_AS5" : {
+                            "name" : "UCF_SortCards_AssessmentSort_AS5",
                             "textMod" : "are a",
                             "val_1" : "Key Area For Development"
                             }

@@ -5,7 +5,10 @@ window.onload =  (function (doc) {
           pageArea = doc.getElementsByTagName("body")[0],
           workArea = doc.getElementById("workArea"),
           sortResultTable = doc.getElementById("sortResults"),
-          deckPlace = doc.getElementById("deckStart");
+          deckPlace = doc.getElementById("deckStart"),
+          initalCardPos = [91,139];
+          
+        //initalCardPos =  [doc.getElementById("UCF").style.right, doc.getElementById("UCF").style.top];
     
     let xmlhttp = new XMLHttpRequest(),
         ucfData,
@@ -22,16 +25,35 @@ window.onload =  (function (doc) {
                         this.title = data.title;
                         this.description = data.description;
                         this.colour = data.colour;
+                        this.pos = {
+                            x: initalCardPos[0],
+                            y: initalCardPos[1],
+                            move() {
+                                let card = system.utils.getNamedObj(data.name);
+                                card.pgEle.style.right = this.x + "px";
+                                card.pgEle.style.top = this.y + "px";
+                                
+                            },
+                            get cords() {
+                                return [this.x, this.y];
+                            },
+                            set cords(value) {
+                                this.x = initalCardPos[0] + value[0],
+                                this.y = initalCardPos[1] + value[1],
+                                this.move();
+                            }
+                        }
                     }
                 
                     buildPgEle() {
                         
                         const su = system.utils,
-                              namePath = su.namePath(this.name),
+                              namePath = su.namePath(this.name), //returns str array of name split 
                               typeNo = namePath.length,
+                              cardName = namePath[typeNo - 1], //last arry 
                               createNode = su.createNode,
-                              wfData = su.getNamedObj(this.name, system.wireframe),
-                              card = namePath[typeNo - 1];
+                              wfData = su.getNamedObj(this.name, system.wireframe);
+                              
                         
                         let  lastLevel = false;
                         
@@ -40,23 +62,23 @@ window.onload =  (function (doc) {
                                 this.title = cObj.title;
                                 this.description = cObj.description;
                                 this.cardNoOf = cObj.noOfSibs;
-                                this.cardIndex = card.split("-").pop();
+                                this.cardIndex = cardName.split("-").pop();
                             }
                         }
 
-                        function makeCard (cardType, id, obj) {
+                        function makeCard (cardType, id, obj = {}) {
                             
                             let ele = cardTemplates.querySelector(cardType).cloneNode(true);
-                            
                             ele.id = id;
   
                             for (let [key, value] of Object.entries(obj)){
                                 try{
                                     ele.querySelector("."+ key).innerHTML = value;
                                 } catch(err) {
-                                    console.log(err.message);
+//                                    if(key != "cardNoOf" || key != "cardIndex"){
+//                                         console.log(key + ": " + err.message);
+//                                    }
                                 }
-                                
                             }
                         
                             // I could move this into the switch stament? (case 4 else)
@@ -70,13 +92,82 @@ window.onload =  (function (doc) {
                         }
                 
                         function chooseSortButton(idFrag){
-                            
-                            let ele = cardTemplates.querySelector("#sortForm").cloneNode(true);
-                            ele.querySelector("h4").innerHTML = idFrag;
-                            ele.querySelector("button").addEventListener("click", su.chooseSort);
-                            ele.id += idFrag;
+                            let ele = system.model.UCF.pgEle.querySelector("." + idFrag);
+//                                ele.addEventListener("click", su.chooseSort);
                             return ele;
                         }
+                        
+                        function processTopCard(tc){
+                            
+                            const boxObj = su.getNamedObj("UCF"),
+                                  cardSpace = 218 + 20;
+                            
+                            
+                            boxObj.dealDeck = function () {
+                                
+                                const compCards = boxObj.children.UCF_CompCards,
+                                      factorGroups = compCards.children;
+                                
+                                compCards.pgEle.classList.remove("startHidden");
+                                
+                                let i = 1;
+                                
+                                Object.entries(factorGroups).forEach( s => {
+                                    console.log(s[1]);
+                                    s[1].pos.cords = [ -cardSpace * 4 + (cardSpace*i) - (cardSpace/2), 0 ];
+                                    
+                                })
+                                
+
+                            }     
+                                
+                            boxObj.beginIt = function () {
+                                this.classList.add("initalSize");
+                                system.model.UCF.children.UCF_SortCards.pgEle.classList.remove("startHidden");
+                               
+                                this.removeEventListener("click", boxObj.beginIt);
+                            }
+                            
+                            tc.style.zIndex = "10";
+                            tc.querySelector(".factorColfill").style.backgroundColor = "#ccc";
+                            tc.addEventListener("click", boxObj.beginIt, false);
+                            
+                            boxObj.sortBehaviour = (e) => {
+                                const sortType = e.target.parentElement.dataset.sorttype,
+                                      sortSetsGroup = system.model.UCF.children.UCF_SortCards.children,
+                                      sortLevelCards = sortSetsGroup[`UCF_SortCards_${sortType}`],
+                                      noOfCards = Object.keys(sortLevelCards.children).length;
+                                
+                                let i = 1;
+   
+                                
+                                Object.entries(sortSetsGroup).forEach( s =>{
+                                    
+                                    if (s[1] === sortLevelCards) {
+                                        Object.entries(sortLevelCards.children).forEach( c =>{
+                                            c[1].pos.cords = [ -cardSpace * (noOfCards/2) + (cardSpace*i) - (cardSpace/2), -380 ];
+                                    
+                                            i++;
+                                        })
+                                    } else {
+                                        s[1].pgEle.style.opacity = 0;
+                                        
+                                    }
+                                } );
+
+                                boxObj.dealDeck();
+                                boxObj.img.classList.add("nextStep");
+                                
+                            }
+                            
+                            const sortTypeEles = boxObj.sortChoser.querySelectorAll(".sortType");
+                            sortTypeEles.forEach( e => {
+                                e.addEventListener("click", boxObj.sortBehaviour, false);
+//                                console.log(e);
+                                }
+                            )
+                        }
+                    
                     
                         if(typeNo > 1) {
 
@@ -86,20 +177,36 @@ window.onload =  (function (doc) {
                 
                         pageArea.addEventListener("dragend", () => {pageArea.style.cursor = "default";});
                         
-                        
                         switch(typeNo) {
                             case 1:
                                 //  1st level
                                 // UCF : Group = Card Deck – Element = Box / Top Card
                                 this.pgEle = createNode("artical", "UCF_deck", "");
+                                this.cardFieldData = new cardFieldData(this);
+                                
+                                this.img = makeCard("#box", this.name, this.cardFieldData);
+                                this.sortChoser = makeCard("#sortChooseTemplate", "sortChoose");
+                                
+                                processTopCard(this.img);
+                                
+                                this.pgEle.appendChild(this.img);
+                                this.pgEle.appendChild(this.sortChoser);
                                 break;
                                 
                             case 2:
                                 //  2nd level
                                 // COMPATANCY CARDS : Group = Compatancy Cards – Element = NA
-                                // SORT CARDS :  Group = Sort Cards – Element = NA    
+                                // SORT CARDS :  Group = Sort Cards – Element = NA
+                                
                                 this.pgEle = createNode("div", this.name , "");
-                                system.model.UCF.pgEle.appendChild(this.pgEle);
+                                this.pgEle.classList.add("startHidden");
+//                                if(cardName.indexOf("Sort") === 0){
+//                                    this.pgEle.appendChild(makeCard("#sortChoose", this.name));
+//                                    
+//                                    
+//                                } else {
+//                                    console.log("Not sort");
+//                                }
                                 break;
                                 
                             case 3:
@@ -107,17 +214,16 @@ window.onload =  (function (doc) {
                                 // COMPATANCY CARDS : Group = Factor Type – Element = Factor Card
                                 // else
                                 // SORT CARDS :  Group = Sort Type – Element = NA
-                                if(card.indexOf("Factor") === 0){
+                                if(cardName.indexOf("Factor") === 0){
                                     
                                     this.cardFieldData = new cardFieldData(this);
                                     this.cardFieldData.cardRef = this.cardFieldData.cardIndex;
-                                    this.pgEle = createNode("div", card , "FactorGroup");
+                                    this.pgEle = createNode("div", cardName , "FactorGroup");
                                     this.pgEle.appendChild(makeCard("#factorCard", this.name, this.cardFieldData));
                                     this.pgEle.querySelector(".factorColfill").style.backgroundColor = this.colour;
                                    
                                 }else{
-                                    this.pgEle = createNode("div", card, "sortType");     
-                                    this.pgEle.appendChild(chooseSortButton(card));
+                                    this.pgEle = createNode("div", cardName, "sortType"); 
                                     system.model.UCF.children.UCF_SortCards.pgEle.appendChild(this.pgEle);
                                 }
                                 break;
@@ -128,7 +234,7 @@ window.onload =  (function (doc) {
                                 // else
                                 // SORT CARDS :  Group = NA – Element = Sort Card
                                 
-                                 if(card.indexOf("Dimension") === 0){
+                                 if(cardName.indexOf("Dimension") === 0){
                                      this.cardFieldData = new cardFieldData(this);
                                      this.cardFieldData.cardRef = this.parent.cardFieldData.cardRef + "." + this.cardFieldData.cardIndex;
                                      this.pgEle = makeCard("#dimentionCard", this.name, this.cardFieldData);
@@ -181,6 +287,7 @@ window.onload =  (function (doc) {
                             this.parent.pgEle.appendChild(this.pgEle);
                         }
                     }
+            
                 },
                   
             utils: {
@@ -249,22 +356,24 @@ window.onload =  (function (doc) {
                 },
                     
                 chooseSort: function(){
+                    
+                    const sortButons = system.model.UCF.pgEle.querySelector("#sortButtons");
 
-                    let keepOn = this.parentElement.parentElement,
-                        sortTypes = doc.getElementById("UCF_SortCards").querySelectorAll(".sortType"),
-                        wfSortName = "UCF_SortCards_" + keepOn.id,
-                        sortLevels = system.wireframe.UCF.children.UCF_SortCards.children[wfSortName].children;
-
-                    function addToTable(e,t){
-                        let ele = system.utils.createNode(e);
-                        ele.innerHTML = t;
-                        sortResultTable.appendChild(ele);
-                    }
-
-
-                    sortTypes.forEach( e => { if (e !== keepOn) e.style.display="none"});
-
-                    doc.getElementById("UCF_CompCards").style.top = "-250px";
+//                    let keepOn = this.parentElement.parentElement,
+//                        sortTypes = doc.getElementById("UCF_SortCards").querySelectorAll(".sortType"),
+//                        wfSortName = "UCF_SortCards_" + keepOn.id,
+//                        sortLevels = system.wireframe.UCF.children.UCF_SortCards.children[wfSortName].children;
+//
+//                    function addToTable(e,t){
+//                        let ele = system.utils.createNode(e);
+//                        ele.innerHTML = t;
+//                        sortResultTable.appendChild(ele);
+//                    }
+//
+//
+//                    sortTypes.forEach( e => { if (e !== keepOn) e.style.display="none"});
+//
+//                    doc.getElementById("UCF_CompCards").style.top = "-250px";
 
                     addToTable("h4", "Sort:");
                     addToTable("h5", keepOn.id.replace("Sort", " Sort"));

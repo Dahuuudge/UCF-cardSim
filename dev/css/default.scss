@@ -2,24 +2,28 @@ $cardWidth: 218px;
 $cardHeight: 122px;
 $gridGap: 16px;
 
+@keyframes intro {
+        
+        from {transform: rotate(20deg) scale(4); top: 1200px; opacity: 1; }
+        to {transform: rotate(0) scale(1.5); top: -$cardHeight/2 + 200px; opacity: 1; }
+    }
+    
+    @keyframes resize {
+        from {transform: scale(1.5);}
+        to {transform: scale(1);}
+    }
+    @keyframes resizeSVG {
+        from {transform: scale(0.3); opacity: 1;}
+        to {transform: scale(1); opacity: 1;}
+    }
+
 body {
     height: 100%;
     
     font-family: sans-serif;
     #cardTemplates {
         display: none;
-        
-        
-        #box{
-            font-size: 26px;
-            display: none
-        }
-        #factorCard {
-            //.title { }
-            
-        }
-        
-        
+
     }
     
     
@@ -29,7 +33,7 @@ body {
         right:  0;
         left: 0;
         background-color:antiquewhite;
-        height: 140%;
+        height: 100%;
         padding: 1em;
         
         #sortResults{
@@ -76,52 +80,96 @@ body {
         h1{
             font-size: 1.6em;
             margin: 0;    
-        }
-        
-    
+        }  
         
         #deckStart{
-            #UCF_SortCards{
-                display: grid;
-                grid-template-rows: repeat(4, $cardHeight);
-                grid-row-gap: $gridGap;     
-                margin: 0 auto;
-                padding: 10px 490px;           
+            position: relative;
+            width: 0;//$cardWidth
+            height: 0;//$cardHeight;
+            top: 50%;
+            left: 50%;
+            
+            #UCF{
+                
+            }
 
-                > div{
-                    display: grid;
-                    grid-template-columns: $cardHeight repeat(5, $cardWidth);
-                    grid-column-gap: $gridGap;
-                } 
+            #UCF_deck{
+                position: absolute;
+                top: -200px;
+                left:-200px;
+//                width: 0;
+//                height: 0;
+                
+                .factorCard{
+                    z-index: 1;
+                }
+                
+                #UCF_SortCards, #UCF_CompCards{
+                    &.startHidden{
+                         display: none;
+                    }
+                }
+                .initalSize{
+                opacity: 1;
+                    transition: opacity 1s;
+                animation: 0.7s ease-in-out 0s 1 normal forwards resize;
+                    & + svg{
+                        opacity: 1;
+                        transform: scale(1);
+                    }
+                }
+                .nextStep{
+                    opacity: 0;
+                    & + svg{
+                        transform: scale(0.3);
+                        opacity: 0;
+                    }
+                }
             }
             
-            #UCF_CompCards{
-                display: grid;
-                grid-template-columns: repeat(8, $cardWidth);
-                grid-column-gap: $gridGap;
-                padding: 50px 20px;
-                position: relative;
-                transition: top 2s;
-                top: 0;
-                
-                > div{
-                    display: grid;
-                    grid-template-columns: auto;
-                    grid-template-rows: repeat(4, $cardHeight);
-                    grid-row-gap: $gridGap;
+            svg#sortChoose{
+                z-index: -1;
+                transform: scale(0.3);
+                transition: all 0.7s;
+                opacity:0;
+                .sortTypeHead{
+                    font-size: 2em;
+                    text-anchor: middle;
+                }
+                .sortTypeLable{
+                    font-size: 1.6em;
                 }
             }
         }
+        #UCF{
+//          The Opacity set to zero Intatly to aviod the uformated flash
+            opacity: 0;
+            animation: 0.85s cubic-bezier(.13,.68,.33,1) 0.1s 1 normal forwards intro;
+        }
+        
+         svg.initalSize{
+//                    animation: 0.7s ease-in-out 0s 1 normal forwards resizeSVG;
+                }
+        
         .cardBlock {
+            transition: all 0.6s;
             width: $cardWidth;
             height: $cardHeight;
-            position: relative;
-            &.sortCard, &.factorCard, &.dimentionCard{
-                border: 1px solid #000;  
-            }
-        
-           
+            position: absolute;
+            top: -$cardHeight/2 + 200px;
+            right: -$cardWidth/2 + 200px;
             
+            &#UCF{
+                button{
+                    position: absolute;
+                    bottom: 2em;
+                }
+            }
+            &.sortCard, &.factorCard, &.dimentionCard{
+                border: 1px solid #000; 
+                border-radius: 3px;
+            }
+
             // HTML Card css test
             
             &.sortCard{
@@ -147,11 +195,9 @@ body {
                         > *{
                             //flex-basis: auto;
                             margin: 0.6em 0;
-                           padding: 0 0.4em;
+                            padding: 0 0.4em;
                         }
                     }
-                    
-                    
                 }
                  .conjunc{
                     display: none;
@@ -166,23 +212,16 @@ body {
                         position: relative;
                         width: $cardWidth;
                         height: 100%;
-//                        right: 2px;
-//                        top:-2px;
-                        z-index: 10;
-                        
                         background: transparent;
-//                    background: red;
-//                        opacity:0.5;
-//                        border: 1px solid transparent;
-                    .cardBlock{
-                          padding: 0;
+                .cardBlock{
+                    padding: 0;
                     margin: 0;
-                        position: relative;
-                        
-                        top:  $cardHeight;
-                        left: -1px;
-                        }
+                    position: relative;
+
+                    top:  $cardHeight;
+                    left: -1px;
                     }
+                }
 
             }
             

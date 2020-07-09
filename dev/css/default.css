@@ -1,12 +1,38 @@
+@keyframes intro {
+  from {
+    transform: rotate(20deg) scale(4);
+    top: 1200px;
+    opacity: 1;
+  }
+  to {
+    transform: rotate(0) scale(1.5);
+    top: 139px;
+    opacity: 1;
+  }
+}
+@keyframes resize {
+  from {
+    transform: scale(1.5);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+@keyframes resizeSVG {
+  from {
+    transform: scale(0.3);
+    opacity: 1;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
 body {
   height: 100%;
   font-family: sans-serif;
 }
 body #cardTemplates {
-  display: none;
-}
-body #cardTemplates #box {
-  font-size: 26px;
   display: none;
 }
 body #workArea {
@@ -15,7 +41,7 @@ body #workArea {
   right: 0;
   left: 0;
   background-color: antiquewhite;
-  height: 140%;
+  height: 100%;
   padding: 1em;
 }
 body #workArea #sortResults {
@@ -59,40 +85,72 @@ body #workArea h1 {
   font-size: 1.6em;
   margin: 0;
 }
-body #workArea #deckStart #UCF_SortCards {
-  display: grid;
-  grid-template-rows: repeat(4, 122px);
-  grid-row-gap: 16px;
-  margin: 0 auto;
-  padding: 10px 490px;
-}
-body #workArea #deckStart #UCF_SortCards > div {
-  display: grid;
-  grid-template-columns: 122px repeat(5, 218px);
-  grid-column-gap: 16px;
-}
-body #workArea #deckStart #UCF_CompCards {
-  display: grid;
-  grid-template-columns: repeat(8, 218px);
-  grid-column-gap: 16px;
-  padding: 50px 20px;
+body #workArea #deckStart {
   position: relative;
-  transition: top 2s;
-  top: 0;
+  width: 0;
+  height: 0;
+  top: 50%;
+  left: 50%;
 }
-body #workArea #deckStart #UCF_CompCards > div {
-  display: grid;
-  grid-template-columns: auto;
-  grid-template-rows: repeat(4, 122px);
-  grid-row-gap: 16px;
+body #workArea #deckStart #UCF_deck {
+  position: absolute;
+  top: -200px;
+  left: -200px;
+}
+body #workArea #deckStart #UCF_deck .factorCard {
+  z-index: 1;
+}
+body #workArea #deckStart #UCF_deck #UCF_SortCards.startHidden, body #workArea #deckStart #UCF_deck #UCF_CompCards.startHidden {
+  display: none;
+}
+body #workArea #deckStart #UCF_deck .initalSize {
+  opacity: 1;
+  transition: opacity 1s;
+  animation: 0.7s ease-in-out 0s 1 normal forwards resize;
+}
+body #workArea #deckStart #UCF_deck .initalSize + svg {
+  opacity: 1;
+  transform: scale(1);
+}
+body #workArea #deckStart #UCF_deck .nextStep {
+  opacity: 0;
+}
+body #workArea #deckStart #UCF_deck .nextStep + svg {
+  transform: scale(0.3);
+  opacity: 0;
+}
+body #workArea #deckStart svg#sortChoose {
+  z-index: -1;
+  transform: scale(0.3);
+  transition: all 0.7s;
+  opacity: 0;
+}
+body #workArea #deckStart svg#sortChoose .sortTypeHead {
+  font-size: 2em;
+  text-anchor: middle;
+}
+body #workArea #deckStart svg#sortChoose .sortTypeLable {
+  font-size: 1.6em;
+}
+body #workArea #UCF {
+  opacity: 0;
+  animation: 0.85s cubic-bezier(0.13, 0.68, 0.33, 1) 0.1s 1 normal forwards intro;
 }
 body #workArea .cardBlock {
+  transition: all 0.6s;
   width: 218px;
   height: 122px;
-  position: relative;
+  position: absolute;
+  top: 139px;
+  right: 91px;
+}
+body #workArea .cardBlock#UCF button {
+  position: absolute;
+  bottom: 2em;
 }
 body #workArea .cardBlock.sortCard, body #workArea .cardBlock.factorCard, body #workArea .cardBlock.dimentionCard {
   border: 1px solid #000;
+  border-radius: 3px;
 }
 body #workArea .cardBlock.sortCard .factorColfill {
   background: #aaa;
@@ -128,7 +186,6 @@ body #workArea .cardBlock.sortCard .reciver {
   position: relative;
   width: 218px;
   height: 100%;
-  z-index: 10;
   background: transparent;
 }
 body #workArea .cardBlock.sortCard .reciver .cardBlock {
