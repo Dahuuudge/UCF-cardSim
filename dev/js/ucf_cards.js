@@ -29,9 +29,9 @@ window.onload =  (function (doc) {
                             x: initalCardPos[0],
                             y: initalCardPos[1],
                             move() {
-                                let card = system.utils.getNamedObj(data.name);
-                                card.pgEle.style.right = this.x + "px";
-                                card.pgEle.style.top = this.y + "px";
+                                let fwContainer = system.utils.getNamedObj(data.name);
+                                fwContainer.card.style.right = this.x + "px";
+                                fwContainer.card.style.top = this.y + "px";
                                 
                             },
                             get cords() {
@@ -53,7 +53,6 @@ window.onload =  (function (doc) {
                               cardName = namePath[typeNo - 1], //last arry 
                               createNode = su.createNode,
                               wfData = su.getNamedObj(this.name, system.wireframe);
-                              
                         
                         let  lastLevel = false;
                         
@@ -97,39 +96,52 @@ window.onload =  (function (doc) {
                             return ele;
                         }
                         
+                        
                         function processTopCard(tc){
-                            
                             const boxObj = su.getNamedObj("UCF"),
-                                  cardSpace = 218 + 20;
-                            
+                                  cardWidth = 218,
+                                  cardHeight = 122,
+                                  cardGap = 16,
+                                  cardSpaceH = cardWidth + cardGap,
+                                  cardSpaceV = cardHeight + cardGap;
                             
                             boxObj.dealDeck = function () {
                                 
                                 const compCards = boxObj.children.UCF_CompCards,
                                       factorGroups = compCards.children;
                                 
-                                compCards.pgEle.classList.remove("startHidden");
+//                                compCards.pgEle.classList.remove("startHidden");
                                 
                                 let i = 1;
                                 
                                 Object.entries(factorGroups).forEach( s => {
                                     console.log(s[1]);
-                                    s[1].pos.cords = [ -cardSpace * 4 + (cardSpace*i) - (cardSpace/2), 0 ];
+                                     let ii = 1;
+                                    s[1].pos.cords = [ -cardSpaceH * 4 + (cardSpaceH * i) - (cardSpaceH / 2), 0 ];
+                                    Object.entries(s[1].children).forEach( c => {
+                                        c[1].pos.cords  = [ -cardSpaceH * 4 + (cardSpaceH * i) - (cardSpaceH / 2), cardSpaceV * ii ];
+                                        ii++;
+                                    });
+                                    i++;
                                     
-                                })
-                                
-
-                            }     
-                                
+                                });
+                            }
+                            
+                            //*************************************
+                            //--- Called on fist click on card ----
+                            //*************************************
                             boxObj.beginIt = function () {
+                                
                                 this.classList.add("initalSize");
+                                
                                 system.model.UCF.children.UCF_SortCards.pgEle.classList.remove("startHidden");
+                                boxObj.children.UCF_CompCards.pgEle.classList.remove("startHidden");
                                
                                 this.removeEventListener("click", boxObj.beginIt);
+                                doc.getElementById("intro").style.opacity = "0";
                             }
                             
                             tc.style.zIndex = "10";
-                            tc.querySelector(".factorColfill").style.backgroundColor = "#ccc";
                             tc.addEventListener("click", boxObj.beginIt, false);
                             
                             boxObj.sortBehaviour = (e) => {
@@ -145,25 +157,46 @@ window.onload =  (function (doc) {
                                     
                                     if (s[1] === sortLevelCards) {
                                         Object.entries(sortLevelCards.children).forEach( c =>{
-                                            c[1].pos.cords = [ -cardSpace * (noOfCards/2) + (cardSpace*i) - (cardSpace/2), -380 ];
+                                            c[1].pos.cords = [ -cardSpaceH * (noOfCards/2) + (cardSpaceH*i) - (cardSpaceH/2), -380 ];
                                     
                                             i++;
                                         })
                                     } else {
                                         s[1].pgEle.style.opacity = 0;
-                                        
                                     }
                                 } );
-
+                                su.chooseSort(sortType);
                                 boxObj.dealDeck();
-                                boxObj.img.classList.add("nextStep");
+                                boxObj.card.classList.add("nextStep");
                                 
+                            }
+                            
+                            boxObj.sortTypeDisplay = (e) => {
+                                const sortTypeBtn = e.target.parentElement,
+                                      sortType = sortTypeBtn.dataset.sorttype,
+                                      displayText = boxObj.sortChoser.querySelector(".sortTypeHead");
+                                
+                                if(e.type === "mouseover"){
+                                    displayText.innerHTML = sortType.replace("Sort", " Sort");
+                                    displayText.classList.add("active");
+                                    sortTypeBtn.getElementsByTagName("circle")[0].classList.add("over");
+                                } else {
+                                   displayText.innerHTML = "Choose Sort Type";
+                                    displayText.classList.remove("active");
+                                    console.log(sortTypeBtn);
+                                    
+                                    sortTypeBtn.getElementsByClassName("over")[0].classList.remove("over");
+                                }
+                                
+
                             }
                             
                             const sortTypeEles = boxObj.sortChoser.querySelectorAll(".sortType");
                             sortTypeEles.forEach( e => {
                                 e.addEventListener("click", boxObj.sortBehaviour, false);
-//                                console.log(e);
+                                e.addEventListener("mouseover", boxObj.sortTypeDisplay, false);
+                                e.addEventListener("mouseleave", boxObj.sortTypeDisplay, false);
+                                
                                 }
                             )
                         }
@@ -182,14 +215,13 @@ window.onload =  (function (doc) {
                                 //  1st level
                                 // UCF : Group = Card Deck – Element = Box / Top Card
                                 this.pgEle = createNode("artical", "UCF_deck", "");
-                                this.cardFieldData = new cardFieldData(this);
-                                
-                                this.img = makeCard("#box", this.name, this.cardFieldData);
+                                this.cardFieldData = new cardFieldData(this);                         
+                                this.card = makeCard("#box", this.name, this.cardFieldData);
                                 this.sortChoser = makeCard("#sortChooseTemplate", "sortChoose");
                                 
-                                processTopCard(this.img);
+                                processTopCard(this.card);
                                 
-                                this.pgEle.appendChild(this.img);
+                                this.pgEle.appendChild(this.card);
                                 this.pgEle.appendChild(this.sortChoser);
                                 break;
                                 
@@ -219,8 +251,9 @@ window.onload =  (function (doc) {
                                     this.cardFieldData = new cardFieldData(this);
                                     this.cardFieldData.cardRef = this.cardFieldData.cardIndex;
                                     this.pgEle = createNode("div", cardName , "FactorGroup");
-                                    this.pgEle.appendChild(makeCard("#factorCard", this.name, this.cardFieldData));
-                                    this.pgEle.querySelector(".factorColfill").style.backgroundColor = this.colour;
+                                    this.card = makeCard("#factorCard", this.name, this.cardFieldData);
+                                    this.card.querySelector(".factorColfill").style.backgroundColor = this.colour;
+                                    this.pgEle.appendChild(this.card);
                                    
                                 }else{
                                     this.pgEle = createNode("div", cardName, "sortType"); 
@@ -237,10 +270,10 @@ window.onload =  (function (doc) {
                                  if(cardName.indexOf("Dimension") === 0){
                                      this.cardFieldData = new cardFieldData(this);
                                      this.cardFieldData.cardRef = this.parent.cardFieldData.cardRef + "." + this.cardFieldData.cardIndex;
-                                     this.pgEle = makeCard("#dimentionCard", this.name, this.cardFieldData);
-                                     this.pgEle.querySelector(".factorColfill").style.backgroundColor = this.parent.colour;
-                                     
-                                     this.pgEle.addEventListener("dragstart", system.utils.dragstart_handler);
+                                     this.card = makeCard("#dimentionCard", this.name, this.cardFieldData);
+                                     this.card.querySelector(".factorColfill").style.backgroundColor = this.parent.colour;                                    
+                                     this.card.addEventListener("dragstart", system.utils.dragstart_handler);
+                                     //this.pgEle = this.card;
                                      
                                  } else {
                                      
@@ -260,10 +293,11 @@ window.onload =  (function (doc) {
                                      delete this.sortCardFieldData.title;
                                      delete this.sortCardFieldData.description;
                                      this.sortCardFieldData.cardRef = this.sortCardFieldData.cardIndex;
-                                     this.pgEle = makeCard("#sortCard", this.name, this.sortCardFieldData);
-                                     this.pgEle.querySelector(".reciver").setAttribute("data-appendto", this.name);
-                                     this.pgEle.addEventListener("drop", system.utils.drop_handler);
-                                     this.pgEle.addEventListener("dragover", system.utils.dragover_handler);
+                                     this.card = makeCard("#sortCard", this.name, this.sortCardFieldData);
+                                     this.card.querySelector(".reciver").setAttribute("data-appendto", this.name);
+                                     this.card.addEventListener("drop", system.utils.drop_handler);
+                                     this.card.addEventListener("dragover", system.utils.dragover_handler);
+                                     //this.pgEle = this.card;
                                  }
                                 break;
                                 
@@ -284,7 +318,8 @@ window.onload =  (function (doc) {
                         }
                     
                         if(typeNo > 1 && !lastLevel) { 
-                            this.parent.pgEle.appendChild(this.pgEle);
+                            
+                            this.pgEle? this.parent.pgEle.appendChild(this.pgEle) : this.parent.pgEle.appendChild(this.card);
                         }
                     }
             
@@ -336,13 +371,15 @@ window.onload =  (function (doc) {
                           card = system.utils.getNamedObj(data),
                           hook = ev.target,
                           sortName = system.utils.getNamedObj(hook.getAttribute("data-appendto"), system.wireframe).val_1,
-                          sortLev = sortTable.querySelector("#" + sortName.replace(" ", "_")),
+                          sortLev = sortTable.querySelector("#" + sortName.replace(/ /g, "_")),
                           li = system.utils.createNode("li");
 
                     li.innerHTML = "<span class='compTitle'>" + card.title + "</span>&nbsp;<span class='compRef'>" + card.cardFieldData.cardRef + "</span>";
 
                     sortLev.appendChild(li);
-                    hook.appendChild(card.pgEle);
+                    card.card.style.top = "122px";
+                    card.card.style.zIndex = "20";
+                    hook.appendChild(card.card);
                     ev.preventDefault();
                 },
 
@@ -355,35 +392,34 @@ window.onload =  (function (doc) {
 
                 },
                     
-                chooseSort: function(){
+                chooseSort: function(sn){
                     
-                    const sortButons = system.model.UCF.pgEle.querySelector("#sortButtons");
+                    //const sortButons = system.model.UCF.pgEle.querySelector("#sortButtons");
 
-//                    let keepOn = this.parentElement.parentElement,
-//                        sortTypes = doc.getElementById("UCF_SortCards").querySelectorAll(".sortType"),
-//                        wfSortName = "UCF_SortCards_" + keepOn.id,
-//                        sortLevels = system.wireframe.UCF.children.UCF_SortCards.children[wfSortName].children;
-//
-//                    function addToTable(e,t){
-//                        let ele = system.utils.createNode(e);
-//                        ele.innerHTML = t;
-//                        sortResultTable.appendChild(ele);
-//                    }
-//
-//
-//                    sortTypes.forEach( e => { if (e !== keepOn) e.style.display="none"});
-//
-//                    doc.getElementById("UCF_CompCards").style.top = "-250px";
+                    let sortTypes = doc.getElementById("UCF_SortCards").querySelectorAll(".sortType"),
+                        wfSortName = "UCF_SortCards_" + sn,
+                        sortLevels = system.wireframe.UCF.children.UCF_SortCards.children[wfSortName].children;
+
+                    function addToTable(e,t){
+                        let ele = system.utils.createNode(e);
+                        ele.innerHTML = t;
+                        sortResultTable.appendChild(ele);
+                    }
+
+
+                    //sortTypes.forEach( e => { if (e !== keepOn) e.style.display="none"});
+
+                    //doc.getElementById("UCF_CompCards").style.top = "-250px";
 
                     addToTable("h4", "Sort:");
-                    addToTable("h5", keepOn.id.replace("Sort", " Sort"));
+                    addToTable("h5", sn.replace("Sort", " Sort"));
 
 
                     for (let [key, value] of Object.entries(sortLevels)) {
 
                     addToTable("h4", value.val_1);
 
-                    sortResultTable.appendChild(system.utils.createNode("ul", value.val_1.replace(" ", "_")));
+                    sortResultTable.appendChild(system.utils.createNode("ul", value.val_1.replace(/ /g, "_")));
 
                     }
                 },

@@ -8,14 +8,20 @@
 
 <body>
     <div id="workArea">
-<!--
-        <h1>UCF Card Deck</h1>
+<!--        <h1>UCF Card Deck</h1>-->
         <section id="sortResults">
+           
             <h3>Table of Sorted Competencies</h3>
                 
             
         </section>
--->
+   
+   <section id="intro">
+       <h1>Universal Compatancy Framework (UCF) Card Deck</h1>
+       
+       <p><span>The Universal Competency Framework is an overarching framework which underpins many SHL products and services.</span>
+       <span>This UCF card deck allows users to define and focus in on key role compatances in a dynamic, interactive way.</span> </p>
+   </section>
     
         
         <div id="deckStart">
@@ -34,8 +40,8 @@
     <div id="cardTemplates">
        
         <article class="cardBlock factorCard" id="box">
-            
-
+            <img src="img/firstCard.svg" />
+<!--
             <div class="factorColfill" >
                 <h3 class="title">Factor Title</h3>
                 <button>Start</button>
@@ -47,6 +53,7 @@
 
                 </footer>
             </div>
+-->
         </article>
         
         <article class="cardBlock factorCard" id="factorCard">
@@ -84,9 +91,30 @@
         </article>
         
         <svg id="sortChooseTemplate" viewBox="-200 -200 400 400" height="400" width="400" xmlns="http://www.w3.org/2000/svg">
+          
+            <defs>
+                <path d="M -220,0 
+                a 220 220 0, 1, 1, 440 0" id="textPath"/>
+<!--                <path d="M-200,0a200,200 0 1,0 400,0a200,200 0 1,0 -400,0" id="textPath"/>-->
+            </defs>
            
-            <circle cx="0" cy="0" r="190" fill="none" stroke="red" stroke-width="3" />
-            <text class="sortTypeHead" y="-100">Sort Type</text>
+            <circle cx="0" cy="0" r="190" fill="none" stroke="#78D64B" stroke-width="3" />
+            
+            
+            <text class="sortTypeHead" text-anchor="middle" y="-100">
+                
+                Choose Sort Type
+            
+            
+            </text>
+<!--
+            <text class="sortTypeHead" text-anchor="middle">
+                <textPath xlink:href="#textPath" startOffset="50%">
+                Choose Sort Type
+                </textPath>
+            
+            </text>
+-->
             <!--
             <g id="sortButtons">
             <circle id="FrequencySort_b" cx="50%" cy="50%" r="6" fill="red" transform = "translate(0,-50) rotate(45,109,111)" />
@@ -98,8 +126,8 @@
             <g class="FrequencySort sortType"  >
                 <g transform = "rotate(60,0,0)">
                     <g transform = "translate(0,-190)" data-sorttype="FrequencySort">
-                        <circle  cx="0" cy="0" r="20" fill="red"  /> 
-                        <text y="2" class="sortTypeLable" fill="black" text-anchor="middle" dominant-baseline="middle" transform = "rotate(-60,0,0)">F</text>
+                        <circle  cx="0" cy="0" r="20" /> 
+                        <text y="2" class="sortTypeLable" fill="#fff" text-anchor="middle" dominant-baseline="middle" transform = "rotate(-60,0,0)">F</text>
                     </g>
                 </g>
             </g>
@@ -107,17 +135,8 @@
             <g class="ComplexitySort sortType" >
                 <g transform = "rotate(20,0,0)">
                     <g transform = "translate(0,-190)"  data-sorttype="ComplexitySort">
-                        <circle  cx="0" cy="0" r="20" fill="red"  /> 
-                        <text y="2" class="sortTypeLable" fill="black" text-anchor="middle" dominant-baseline="middle" transform = "rotate(-20,0,0)">C</text>
-                    </g>
-                </g>
-            </g>
-            
-            <g class="ComplexitySort sortType" >
-                <g transform = "rotate(20,0,0)">
-                    <g transform = "translate(0,-190)" data-sorttype="ComplexitySort">
-                        <circle  cx="0" cy="0" r="20" fill="red"  /> 
-                        <text y="2" class="sortTypeLable" fill="black" text-anchor="middle" dominant-baseline="middle" transform = "rotate(-20,0,0)">C</text>
+                        <circle  cx="0" cy="0" r="20" /> 
+                        <text y="2" class="sortTypeLable" fill="#fff" text-anchor="middle" dominant-baseline="middle" transform = "rotate(-20,0,0)">C</text>
                     </g>
                 </g>
             </g>
@@ -125,8 +144,8 @@
             <g class="ImportanceSort sortType"  >
                 <g transform = "rotate(-20,0,0)">
                     <g transform = "translate(0,-190)" data-sorttype="ImportanceSort">
-                        <circle  cx="0" cy="0" r="20" fill="red"  /> 
-                        <text y="2" class="sortTypeLable" fill="black" text-anchor="middle" dominant-baseline="middle" transform = "rotate(20,0,0)">I</text>
+                        <circle  cx="0" cy="0" r="20" /> 
+                        <text y="2" class="sortTypeLable" fill="#fff" text-anchor="middle" dominant-baseline="middle" transform = "rotate(20,0,0)">I</text>
                     </g>
                 </g>
             </g>
@@ -134,8 +153,8 @@
             <g class="AssessmentSort sortType">
                 <g transform = "rotate(-60,0,0)">
                     <g transform = "translate(0,-190)" data-sorttype="AssessmentSort">
-                        <circle  cx="0" cy="0" r="20" fill="red"  /> 
-                        <text y="2" class="sortTypeLable" fill="black" text-anchor="middle" dominant-baseline="middle" transform = "rotate(60,0,0)">A</text>
+                        <circle  cx="0" cy="0" r="20" /> 
+                        <text y="2" class="sortTypeLable" fill="#fff" text-anchor="middle" dominant-baseline="middle" transform = "rotate(60,0,0)">A</text>
                     </g>
                 </g>
             </g>
