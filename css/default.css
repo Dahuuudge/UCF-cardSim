@@ -45,10 +45,8 @@ body #cardTemplates {
   display: none;
 }
 body #workArea {
-  max-height: 1200px;
-  min-height: 1080px;
-  max-width: 2000px;
-  min-width: 1920px;
+  max-height: 1080px;
+  width: 1920px;
   position: absolute;
   top: 0;
   right: 0;
@@ -56,6 +54,7 @@ body #workArea {
   background-color: white;
   height: 100%;
   padding: 1em;
+  overflow-y: hidden;
 }
 body #workArea #intro {
   position: absolute;
@@ -78,62 +77,70 @@ body #workArea #intro span:nth-child(1) {
 body #workArea #intro span:nth-child(2) {
   animation-delay: 3s;
 }
-body #workArea #sortResults {
-  transition: left 1s;
+body #workArea #popUpPanel {
+  transition: bottom 1s;
   position: absolute;
-  padding: 1em;
-  top: 4em;
-  left: -382px;
+  bottom: -560px;
+  left: 0;
+  border: 1px solid #5B6770;
+  z-index: 20;
+  width: 100%;
+  height: 560px;
+  background: white;
+}
+body #workArea #popUpPanel:hover {
+  bottom: 0;
+}
+body #workArea #popUpPanel:hover::before {
+  content: "X";
+}
+body #workArea #popUpPanel:hover #sortResults {
   display: grid;
   grid-template-columns: 140px 240px;
   border: 1px solid #5B6770;
 }
-body #workArea #sortResults:hover {
-  left: 0px;
-}
-body #workArea #sortResults::after {
-  content: "X";
+body #workArea #popUpPanel::before {
+  content: ">>";
   text-align: center;
   line-height: 36px;
   position: absolute;
   display: block;
-  right: -40px;
+  top: -50px;
   color: #fff;
   font-size: 26px;
-  top: -1px;
-  width: 36px;
-  height: 36px;
+  width: 300px;
+  height: 50px;
   background: #5B6770;
   background-size: 100%;
 }
-body #workArea #sortResults > * {
+body #workArea #popUpPanel > * {
   margin: 0.5em 0;
 }
-body #workArea #sortResults h3 {
+body #workArea #popUpPanel h3 {
   grid-column-start: 1;
   grid-column-end: 3;
   margin-bottom: 0.2em;
 }
-body #workArea #sortResults h4 {
+body #workArea #popUpPanel h4 {
   text-align: right;
   font-size: 1em;
   font-weight: 500;
   padding-right: 30px;
 }
-body #workArea #sortResults h5 {
+body #workArea #popUpPanel h5 {
   font-size: 1em;
   font-weight: 200;
 }
-body #workArea #sortResults ul {
+body #workArea #popUpPanel ul {
   padding-left: 1em;
 }
-body #workArea #sortResults ul li {
+body #workArea #popUpPanel ul li {
   margin-bottom: 0.6em;
 }
-body #workArea #sortResults ul li .compTitle {
+body #workArea #popUpPanel ul li .compTitle {
   font-weight: 500;
 }
-body #workArea #sortResults ul li .compRef {
+body #workArea #popUpPanel ul li .compRef {
   font-weight: 200;
 }
 body #workArea h1 {
@@ -173,6 +180,7 @@ body #workArea #deckStart #UCF_deck #UCF.initalSize + svg {
 }
 body #workArea #deckStart #UCF_deck #UCF.nextStep {
   opacity: 0;
+  display: none;
 }
 body #workArea #deckStart #UCF_deck #UCF.nextStep + svg {
   transform: scale(0.3);
@@ -212,6 +220,9 @@ body #workArea #deckStart #UCF_deck .factorCard {
 }
 body #workArea #deckStart #UCF_deck #UCF_SortCards.startHidden, body #workArea #deckStart #UCF_deck #UCF_CompCards.startHidden {
   display: none;
+}
+body #workArea #deckStart #UCF_deck #UCF_CompCards .dimentionCard {
+  cursor: pointer;
 }
 body #workArea #deckStart #UCF_deck .cardBlock {
   width: 218px;

@@ -6,7 +6,7 @@ window.onload =  (function (doc) {
           workArea = doc.getElementById("workArea"),
           sortResultTable = doc.getElementById("sortResults"),
           deckPlace = doc.getElementById("deckStart"),
-          initalCardPos = [91,139];
+          initalCardPos = [91,139];//139
           
         //initalCardPos =  [doc.getElementById("UCF").style.right, doc.getElementById("UCF").style.top];
     
@@ -32,7 +32,6 @@ window.onload =  (function (doc) {
                                 let fwContainer = system.utils.getNamedObj(data.name);
                                 fwContainer.card.style.right = this.x + "px";
                                 fwContainer.card.style.top = this.y + "px";
-                                
                             },
                             get cords() {
                                 return [this.x, this.y];
@@ -103,7 +102,8 @@ window.onload =  (function (doc) {
                                   cardHeight = 122,
                                   cardGap = 16,
                                   cardSpaceH = cardWidth + cardGap,
-                                  cardSpaceV = cardHeight + cardGap;
+                                  cardSpaceV = cardHeight + cardGap,
+                                  vCardA = 90; //vertical Card Placment Ajustment, bummping the Comp Cards up the page
                             
                             boxObj.dealDeck = function () {
                                 
@@ -115,15 +115,14 @@ window.onload =  (function (doc) {
                                 let i = 1;
                                 
                                 Object.entries(factorGroups).forEach( s => {
-                                    console.log(s[1]);
+//                                    console.log(s[1]);
                                      let ii = 1;
-                                    s[1].pos.cords = [ -cardSpaceH * 4 + (cardSpaceH * i) - (cardSpaceH / 2), 0 ];
+                                    s[1].pos.cords = [ -cardSpaceH * 4 + (cardSpaceH * i) - (cardSpaceH / 2), 0 - vCardA ];
                                     Object.entries(s[1].children).forEach( c => {
-                                        c[1].pos.cords  = [ -cardSpaceH * 4 + (cardSpaceH * i) - (cardSpaceH / 2), cardSpaceV * ii ];
+                                        c[1].pos.cords  = [ -cardSpaceH * 4 + (cardSpaceH * i) - (cardSpaceH / 2), (cardSpaceV * ii) - vCardA  ] ;
                                         ii++;
                                     });
                                     i++;
-                                    
                                 });
                             }
                             
@@ -148,16 +147,17 @@ window.onload =  (function (doc) {
                                 const sortType = e.target.parentElement.dataset.sorttype,
                                       sortSetsGroup = system.model.UCF.children.UCF_SortCards.children,
                                       sortLevelCards = sortSetsGroup[`UCF_SortCards_${sortType}`],
-                                      noOfCards = Object.keys(sortLevelCards.children).length;
+                                      noOfCards = Object.keys(sortLevelCards.children).length,
+                                      sCardVertD = 460; //sortCardVertDisplacment
                                 
                                 let i = 1;
    
-                                
+                                // placing the Sort Cards
                                 Object.entries(sortSetsGroup).forEach( s =>{
                                     
                                     if (s[1] === sortLevelCards) {
                                         Object.entries(sortLevelCards.children).forEach( c =>{
-                                            c[1].pos.cords = [ -cardSpaceH * (noOfCards/2) + (cardSpaceH*i) - (cardSpaceH/2), -380 ];
+                                            c[1].pos.cords = [ -cardSpaceH * (noOfCards/2) + (cardSpaceH*i) - (cardSpaceH/2), -sCardVertD ];
                                     
                                             i++;
                                         })
@@ -423,6 +423,9 @@ window.onload =  (function (doc) {
 
                     }
                 },
+                noScroll: function() {
+                  window.scrollTo(0, 0);
+                },
 
                 recursiveCall: function (wireFrame, model) {
 
@@ -462,7 +465,19 @@ window.onload =  (function (doc) {
 
     xmlhttp.open("GET", "data/UCF_data4.json", true);
     xmlhttp.send();
+    window.addEventListener('scroll', system.utils.noScroll);
     
+    function fullScreen(){
+        console.log("running");
+        if (!doc.fullscreenElement) {
+          doc.documentElement.requestFullscreen();
+        }
+    }
+    let btn = doc.querySelector(".introPgEle").querySelector("button");
+    btn.addEventListener("click", function(){
+        console.log("running");
+    }, false);
+    //pageArea.requestFullscreen();
     //workArea.appendChild(system.model.UCF_0.pgEle);
     doc.system = system;
     
