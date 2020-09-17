@@ -46,37 +46,16 @@ body #cardTemplates {
 }
 body main {
   height: 1080px;
+  max-height: inherit;
   width: 1920px;
+  max-width: inherit;
   position: absolute;
   top: 0;
   right: 0;
   left: 0;
   background-color: white;
-  height: 100%;
   padding: 1em;
   overflow-y: hidden;
-}
-body main #intro {
-  position: absolute;
-  width: 720px;
-  left: -360px;
-  top: -240px;
-  text-align: center;
-  transition: opacity 1.2s;
-}
-body main #intro h1 {
-  color: #5B6770;
-}
-body main #intro h1, body main #intro span {
-  color: #5B6770;
-  opacity: 0;
-  animation: 2.5s ease-out 1 forwards awsomeTitle;
-}
-body main #intro span:nth-child(1) {
-  animation-delay: 2s;
-}
-body main #intro span:nth-child(2) {
-  animation-delay: 3s;
 }
 body main #popUpPanel {
   transition: bottom 1s;
@@ -154,6 +133,28 @@ body main #origin {
   height: 0;
   top: 48%;
   left: 50%;
+}
+body main #origin #intro {
+  position: absolute;
+  width: 720px;
+  left: -360px;
+  top: -240px;
+  text-align: center;
+  transition: opacity 1.2s;
+}
+body main #origin #intro h1 {
+  color: #5B6770;
+}
+body main #origin #intro h1, body main #origin #intro span {
+  color: #5B6770;
+  opacity: 0;
+  animation: 2.5s ease-out 1 forwards awsomeTitle;
+}
+body main #origin #intro span:nth-child(1) {
+  animation-delay: 2s;
+}
+body main #origin #intro span:nth-child(2) {
+  animation-delay: 3s;
 }
 body main #origin #UCF_deck {
   position: absolute;

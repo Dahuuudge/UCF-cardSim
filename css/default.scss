@@ -36,41 +36,18 @@ body {
     
     main{
         height: 1080px;
+        max-height: inherit;
         width: 1920px;
+        max-width: inherit;
         position: absolute;
         top: 0;
         right: 0;
         left: 0;
         background-color:white;
-        height: 100%;
         padding: 1em;
         overflow-y: hidden;
         
-        #intro{
-            position: absolute;
-            width: 720px;
-            left: -360px;
-            top: -240px;
-            text-align: center;
-            transition: opacity 1.2s;
-            h1{
-                color: $shl_Grey;
-            }
-            
-            h1, span {
-               color: $shl_Grey;
-                opacity: 0;
-                animation: 2.5s ease-out 1 forwards awsomeTitle;
-//                animation-duration: 0.2s;
-            }
-            span:nth-child(1){
-                
-                animation-delay: 2s;
-            }
-            span:nth-child(2){
-                animation-delay: 3s;
-            }
-        }
+
         
         #popUpPanel{
             transition: bottom 1s;
@@ -162,6 +139,30 @@ body {
             top: 48%;
             left: 50%;
             
+            #intro{
+                position: absolute;
+                width: 720px;
+                left: -360px;
+                top: -240px;
+                text-align: center;
+                transition: opacity 1.2s;
+                h1{
+                    color: $shl_Grey;
+                }
+
+                h1, span {
+                   color: $shl_Grey;
+                    opacity: 0;
+                    animation: 2.5s ease-out 1 forwards awsomeTitle;
+                }
+                span:nth-child(1){
+
+                    animation-delay: 2s;
+                }
+                span:nth-child(2){
+                    animation-delay: 3s;
+                }
+            }
 
             #UCF_deck{
                 position: absolute;
