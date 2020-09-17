@@ -3,9 +3,8 @@ window.onload =  (function (doc) {
     
     const cardTemplates = doc.getElementById("cardTemplates"),
           pageArea = doc.getElementsByTagName("body")[0],
-          workArea = doc.getElementById("workArea"),
           sortResultTable = doc.getElementById("sortResults"),
-          deckPlace = doc.getElementById("deckStart"),
+          deckPlace = doc.getElementById("origin"),
           initalCardPos = [91,139];//139
           
         //initalCardPos =  [doc.getElementById("UCF").style.right, doc.getElementById("UCF").style.top];
@@ -214,7 +213,7 @@ window.onload =  (function (doc) {
                             case 1:
                                 //  1st level
                                 // UCF : Group = Card Deck – Element = Box / Top Card
-                                this.pgEle = createNode("artical", "UCF_deck", "");
+                                this.pgEle = createNode("article", "UCF_deck", "");
                                 this.cardFieldData = new cardFieldData(this);                         
                                 this.card = makeCard("#box", this.name, this.cardFieldData);
                                 this.sortChoser = makeCard("#sortChooseTemplate", "sortChoose");
@@ -467,18 +466,6 @@ window.onload =  (function (doc) {
     xmlhttp.send();
     window.addEventListener('scroll', system.utils.noScroll);
     
-    function fullScreen(){
-        console.log("running");
-        if (!doc.fullscreenElement) {
-          doc.documentElement.requestFullscreen();
-        }
-    }
-    let btn = doc.querySelector(".introPgEle").querySelector("button");
-    btn.addEventListener("click", function(){
-        console.log("running");
-    }, false);
-    //pageArea.requestFullscreen();
-    //workArea.appendChild(system.model.UCF_0.pgEle);
     doc.system = system;
     
     

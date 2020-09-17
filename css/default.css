@@ -44,8 +44,8 @@ body {
 body #cardTemplates {
   display: none;
 }
-body #workArea {
-  max-height: 1080px;
+body main {
+  height: 1080px;
   width: 1920px;
   position: absolute;
   top: 0;
@@ -56,28 +56,29 @@ body #workArea {
   padding: 1em;
   overflow-y: hidden;
 }
-body #workArea #intro {
+body main #intro {
   position: absolute;
-  width: 33.3%;
-  padding: 13% 32%;
+  width: 720px;
+  left: -360px;
+  top: -240px;
   text-align: center;
   transition: opacity 1.2s;
 }
-body #workArea #intro h1 {
+body main #intro h1 {
   color: #5B6770;
 }
-body #workArea #intro h1, body #workArea #intro span {
+body main #intro h1, body main #intro span {
   color: #5B6770;
   opacity: 0;
   animation: 2.5s ease-out 1 forwards awsomeTitle;
 }
-body #workArea #intro span:nth-child(1) {
+body main #intro span:nth-child(1) {
   animation-delay: 2s;
 }
-body #workArea #intro span:nth-child(2) {
+body main #intro span:nth-child(2) {
   animation-delay: 3s;
 }
-body #workArea #popUpPanel {
+body main #popUpPanel {
   transition: bottom 1s;
   position: absolute;
   bottom: -560px;
@@ -88,18 +89,18 @@ body #workArea #popUpPanel {
   height: 560px;
   background: white;
 }
-body #workArea #popUpPanel:hover {
+body main #popUpPanel:hover {
   bottom: 0;
 }
-body #workArea #popUpPanel:hover::before {
+body main #popUpPanel:hover::before {
   content: "X";
 }
-body #workArea #popUpPanel:hover #sortResults {
+body main #popUpPanel:hover #sortResults {
   display: grid;
   grid-template-columns: 140px 240px;
   border: 1px solid #5B6770;
 }
-body #workArea #popUpPanel::before {
+body main #popUpPanel::before {
   content: ">>";
   text-align: center;
   line-height: 36px;
@@ -113,156 +114,156 @@ body #workArea #popUpPanel::before {
   background: #5B6770;
   background-size: 100%;
 }
-body #workArea #popUpPanel > * {
+body main #popUpPanel > * {
   margin: 0.5em 0;
 }
-body #workArea #popUpPanel h3 {
+body main #popUpPanel h3 {
   grid-column-start: 1;
   grid-column-end: 3;
   margin-bottom: 0.2em;
 }
-body #workArea #popUpPanel h4 {
+body main #popUpPanel h4 {
   text-align: right;
   font-size: 1em;
   font-weight: 500;
   padding-right: 30px;
 }
-body #workArea #popUpPanel h5 {
+body main #popUpPanel h5 {
   font-size: 1em;
   font-weight: 200;
 }
-body #workArea #popUpPanel ul {
+body main #popUpPanel ul {
   padding-left: 1em;
 }
-body #workArea #popUpPanel ul li {
+body main #popUpPanel ul li {
   margin-bottom: 0.6em;
 }
-body #workArea #popUpPanel ul li .compTitle {
+body main #popUpPanel ul li .compTitle {
   font-weight: 500;
 }
-body #workArea #popUpPanel ul li .compRef {
+body main #popUpPanel ul li .compRef {
   font-weight: 200;
 }
-body #workArea h1 {
+body main h1 {
   font-size: 1.6em;
   margin: 0;
 }
-body #workArea #deckStart {
+body main #origin {
   position: relative;
   width: 0;
   height: 0;
   top: 48%;
   left: 50%;
 }
-body #workArea #deckStart #UCF_deck {
+body main #origin #UCF_deck {
   position: absolute;
   top: -200px;
   left: -200px;
 }
-body #workArea #deckStart #UCF_deck #UCF {
+body main #origin #UCF_deck #UCF {
   opacity: 0;
   animation: 0.85s cubic-bezier(0.13, 0.68, 0.33, 1) 4.5s 1 normal forwards intro;
   animation-delay: 4s;
   cursor: pointer;
 }
-body #workArea #deckStart #UCF_deck #UCF.cardBlock button {
+body main #origin #UCF_deck #UCF.cardBlock button {
   position: absolute;
   bottom: 2em;
 }
-body #workArea #deckStart #UCF_deck #UCF.initalSize {
+body main #origin #UCF_deck #UCF.initalSize {
   opacity: 1;
   transition: opacity 1s;
   animation: 0.7s ease-in-out 0s 1 normal forwards resize;
 }
-body #workArea #deckStart #UCF_deck #UCF.initalSize + svg {
+body main #origin #UCF_deck #UCF.initalSize + svg {
   opacity: 1;
   transform: scale(1);
 }
-body #workArea #deckStart #UCF_deck #UCF.nextStep {
+body main #origin #UCF_deck #UCF.nextStep {
   opacity: 0;
   display: none;
 }
-body #workArea #deckStart #UCF_deck #UCF.nextStep + svg {
+body main #origin #UCF_deck #UCF.nextStep + svg {
   transform: scale(0.3);
   opacity: 0;
 }
-body #workArea #deckStart #UCF_deck svg#sortChoose {
+body main #origin #UCF_deck svg#sortChoose {
   z-index: -1;
   transform: scale(0.3);
   transition: all 0.7s;
   opacity: 0;
 }
-body #workArea #deckStart #UCF_deck svg#sortChoose .sortTypeHead {
+body main #origin #UCF_deck svg#sortChoose .sortTypeHead {
   font-size: 1em;
   letter-spacing: 0.1em;
   text-anchor: middle;
   font-weight: 600;
   color: #5B6770;
 }
-body #workArea #deckStart #UCF_deck svg#sortChoose .sortTypeHead.active {
+body main #origin #UCF_deck svg#sortChoose .sortTypeHead.active {
   letter-spacing: 0.14em;
 }
-body #workArea #deckStart #UCF_deck svg#sortChoose .sortTypeLable {
+body main #origin #UCF_deck svg#sortChoose .sortTypeLable {
   font-size: 1.02em;
 }
-body #workArea #deckStart #UCF_deck svg#sortChoose .sortType g g {
+body main #origin #UCF_deck svg#sortChoose .sortType g g {
   cursor: pointer;
 }
-body #workArea #deckStart #UCF_deck svg#sortChoose .sortType g g circle {
+body main #origin #UCF_deck svg#sortChoose .sortType g g circle {
   transition: fill 0.3s;
   fill: #78D64B;
 }
-body #workArea #deckStart #UCF_deck svg#sortChoose .sortType g g circle.over {
+body main #origin #UCF_deck svg#sortChoose .sortType g g circle.over {
   fill: #5B6770;
 }
-body #workArea #deckStart #UCF_deck .factorCard {
+body main #origin #UCF_deck .factorCard {
   z-index: 1;
 }
-body #workArea #deckStart #UCF_deck #UCF_SortCards.startHidden, body #workArea #deckStart #UCF_deck #UCF_CompCards.startHidden {
+body main #origin #UCF_deck #UCF_SortCards.startHidden, body main #origin #UCF_deck #UCF_CompCards.startHidden {
   display: none;
 }
-body #workArea #deckStart #UCF_deck #UCF_CompCards .dimentionCard {
+body main #origin #UCF_deck #UCF_CompCards .dimentionCard {
   cursor: pointer;
 }
-body #workArea #deckStart #UCF_deck .cardBlock {
+body main #origin #UCF_deck .cardBlock {
   width: 218px;
   height: 122px;
   position: absolute;
   top: 139px;
   right: 91px;
 }
-body #workArea #deckStart #UCF_deck .cardBlock.sortCard {
+body main #origin #UCF_deck .cardBlock.sortCard {
   transition-property: top, right;
   transition-duration: 1s, 0.6s;
   transition-delay: 0s, 0.7s;
 }
-body #workArea #deckStart #UCF_deck .cardBlock.factorCard, body #workArea #deckStart #UCF_deck .cardBlock.dimentionCard {
+body main #origin #UCF_deck .cardBlock.factorCard, body main #origin #UCF_deck .cardBlock.dimentionCard {
   transition-property: right, top;
   transition-duration: 1.2s, 0.6s;
   transition-delay: 1.5s, 2.5s;
 }
-body #workArea #deckStart #UCF_deck .cardBlock div {
+body main #origin #UCF_deck .cardBlock div {
   position: absolute;
 }
-body #workArea #deckStart #UCF_deck .cardBlock div .title {
+body main #origin #UCF_deck .cardBlock div .title {
   font-size: 0.8em;
   margin: 0.6em 0;
 }
-body #workArea #deckStart #UCF_deck .cardBlock div > * {
+body main #origin #UCF_deck .cardBlock div > * {
   padding: 0 0.6em;
 }
-body #workArea #deckStart #UCF_deck .cardBlock div.factorColfill {
+body main #origin #UCF_deck .cardBlock div.factorColfill {
   width: 100%;
 }
-body #workArea #deckStart #UCF_deck .cardBlock div.factorColfill h3 {
+body main #origin #UCF_deck .cardBlock div.factorColfill h3 {
   color: #fff;
   font-size: 0.7em;
 }
-body #workArea #deckStart #UCF_deck .cardBlock div.cardBodyText p.description {
+body main #origin #UCF_deck .cardBlock div.cardBodyText p.description {
   margin: 0.6em 0;
   font-size: 0.6em;
 }
-body #workArea #deckStart #UCF_deck .cardBlock div.cardBodyText footer {
+body main #origin #UCF_deck .cardBlock div.cardBodyText footer {
   position: absolute;
   width: 206px;
   display: flex;
@@ -270,50 +271,50 @@ body #workArea #deckStart #UCF_deck .cardBlock div.cardBodyText footer {
   height: 2em;
   font-size: 0.6em;
 }
-body #workArea #deckStart #UCF_deck .cardBlock div.cardBodyText footer p.index {
+body main #origin #UCF_deck .cardBlock div.cardBodyText footer p.index {
   width: 14px;
 }
-body #workArea #deckStart #UCF_deck .cardBlock div.cardBodyText footer p.cardRef {
+body main #origin #UCF_deck .cardBlock div.cardBodyText footer p.cardRef {
   width: 14px;
   text-align: right;
 }
-body #workArea #deckStart #UCF_deck .cardBlock div.cardBodyText footer p.sortType {
+body main #origin #UCF_deck .cardBlock div.cardBodyText footer p.sortType {
   width: 200px;
   text-align: center;
 }
-body #workArea #deckStart #UCF_deck .cardBlock.sortCard, body #workArea #deckStart #UCF_deck .cardBlock.factorCard, body #workArea #deckStart #UCF_deck .cardBlock.dimentionCard {
+body main #origin #UCF_deck .cardBlock.sortCard, body main #origin #UCF_deck .cardBlock.factorCard, body main #origin #UCF_deck .cardBlock.dimentionCard {
   border: 1px solid #000;
   border-radius: 3px;
 }
-body #workArea #deckStart #UCF_deck .cardBlock.sortCard .factorColfill {
+body main #origin #UCF_deck .cardBlock.sortCard .factorColfill {
   background: #aaa;
 }
-body #workArea #deckStart #UCF_deck .cardBlock.sortCard .factorColfill .text_1, body #workArea #deckStart #UCF_deck .cardBlock.sortCard .factorColfill .text_2 {
+body main #origin #UCF_deck .cardBlock.sortCard .factorColfill .text_1, body main #origin #UCF_deck .cardBlock.sortCard .factorColfill .text_2 {
   text-align: center;
 }
-body #workArea #deckStart #UCF_deck .cardBlock.sortCard .factorColfill .text_1 {
+body main #origin #UCF_deck .cardBlock.sortCard .factorColfill .text_1 {
   margin: 3em 0 0;
 }
-body #workArea #deckStart #UCF_deck .cardBlock.sortCard .factorColfill .text_2 {
+body main #origin #UCF_deck .cardBlock.sortCard .factorColfill .text_2 {
   margin: 2.4em 0 0;
 }
-body #workArea #deckStart #UCF_deck .cardBlock.sortCard .factorColfill .vals {
+body main #origin #UCF_deck .cardBlock.sortCard .factorColfill .vals {
   display: flex;
   justify-content: center;
   width: 100%;
   left: -8px;
 }
-body #workArea #deckStart #UCF_deck .cardBlock.sortCard .factorColfill .vals > * {
+body main #origin #UCF_deck .cardBlock.sortCard .factorColfill .vals > * {
   margin: 0.6em 0;
   padding: 0 0.4em;
 }
-body #workArea #deckStart #UCF_deck .cardBlock.sortCard .conjunc {
+body main #origin #UCF_deck .cardBlock.sortCard .conjunc {
   display: none;
   width: 10px;
   padding: 0;
   font-weight: 200;
 }
-body #workArea #deckStart #UCF_deck .cardBlock.sortCard .reciver {
+body main #origin #UCF_deck .cardBlock.sortCard .reciver {
   padding: 0;
   margin: 0;
   position: relative;
@@ -321,58 +322,58 @@ body #workArea #deckStart #UCF_deck .cardBlock.sortCard .reciver {
   height: 100%;
   background: transparent;
 }
-body #workArea #deckStart #UCF_deck .cardBlock.sortCard .reciver .cardBlock {
+body main #origin #UCF_deck .cardBlock.sortCard .reciver .cardBlock {
   padding: 0;
   margin: 0;
   position: relative;
   top: 122px;
   left: -1px;
 }
-body #workArea #deckStart #UCF_deck .cardBlock.factorCard .factorColfill, body #workArea #deckStart #UCF_deck .cardBlock.sortCard .factorColfill {
+body main #origin #UCF_deck .cardBlock.factorCard .factorColfill, body main #origin #UCF_deck .cardBlock.sortCard .factorColfill {
   height: 122px;
 }
-body #workArea #deckStart #UCF_deck .cardBlock.factorCard > .cardBodyText, body #workArea #deckStart #UCF_deck .cardBlock.sortCard > .cardBodyText {
+body main #origin #UCF_deck .cardBlock.factorCard > .cardBodyText, body main #origin #UCF_deck .cardBlock.sortCard > .cardBodyText {
   top: 1.5em;
   color: #fff;
   height: 94px;
 }
-body #workArea #deckStart #UCF_deck .cardBlock.factorCard footer, body #workArea #deckStart #UCF_deck .cardBlock.sortCard footer {
+body main #origin #UCF_deck .cardBlock.factorCard footer, body main #origin #UCF_deck .cardBlock.sortCard footer {
   bottom: 0;
 }
-body #workArea #deckStart #UCF_deck .cardBlock.dimentionCard .factorColfill {
+body main #origin #UCF_deck .cardBlock.dimentionCard .factorColfill {
   height: 1.8em;
 }
-body #workArea #deckStart #UCF_deck .cardBlock.dimentionCard .cardBodyText {
+body main #origin #UCF_deck .cardBlock.dimentionCard .cardBodyText {
   background: #fff;
   top: 1.8em;
   height: 93px;
 }
-body #workArea #deckStart #UCF_deck .cardBlock.dimentionCard footer {
+body main #origin #UCF_deck .cardBlock.dimentionCard footer {
   bottom: 4px;
 }
-body #workArea #dropZones artical {
+body main #dropZones artical {
   width: 218px;
   height: 122px;
   border: 1px solid #000;
 }
-body #workArea #dropZones #sortArea artical {
+body main #dropZones #sortArea artical {
   position: absolute;
   top: 200px;
 }
-body #workArea #dropZones #sortArea #sa1 {
+body main #dropZones #sortArea #sa1 {
   left: 218px;
 }
-body #workArea #dropZones #sortArea #sa2 {
+body main #dropZones #sortArea #sa2 {
   left: 436px;
 }
-body #workArea #dropZones #sortArea #sa3 {
+body main #dropZones #sortArea #sa3 {
   left: 654px;
 }
-body #workArea #dropZones #cardArea {
+body main #dropZones #cardArea {
   position: absolute;
   top: 400px;
 }
-body #workArea #dropZones #cardArea artical {
+body main #dropZones #cardArea artical {
   float: left;
 }
 
