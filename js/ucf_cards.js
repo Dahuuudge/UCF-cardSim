@@ -1,11 +1,14 @@
 window.onload =  (function (doc) {
     "use strict";
     
+    // The initalCardPos array vector infuences (forgottne how exactaly) the diplacment the cards make when distributing them selves over the screen. The Compatancy cards have a further value 'vCardA' that modifys their vertical posiotn
+    
     const cardTemplates = doc.getElementById("cardTemplates"),
           pageArea = doc.getElementsByTagName("body")[0],
           sortResultTable = doc.getElementById("sortResults"),
           deckPlace = doc.getElementById("origin"),
-          initalCardPos = [91,139];//139
+          initalCardPos = [91,139];//139 was the origanal positon
+    
           
         //initalCardPos =  [doc.getElementById("UCF").style.right, doc.getElementById("UCF").style.top];
     
@@ -102,7 +105,7 @@ window.onload =  (function (doc) {
                                   cardGap = 16,
                                   cardSpaceH = cardWidth + cardGap,
                                   cardSpaceV = cardHeight + cardGap,
-                                  vCardA = 90; //vertical Card Placment Ajustment, bummping the Comp Cards up the page
+                                  vCardA = 200; //vertical Card Placment Ajustment, bummping the Comp Cards up the page
                             
                             boxObj.dealDeck = function () {
                                 
@@ -147,7 +150,7 @@ window.onload =  (function (doc) {
                                       sortSetsGroup = system.model.UCF.children.UCF_SortCards.children,
                                       sortLevelCards = sortSetsGroup[`UCF_SortCards_${sortType}`],
                                       noOfCards = Object.keys(sortLevelCards.children).length,
-                                      sCardVertD = 460; //sortCardVertDisplacment
+                                      sCardVertD = 360; //sortCardVertDisplacment
                                 
                                 let i = 1;
    
@@ -182,8 +185,6 @@ window.onload =  (function (doc) {
                                 } else {
                                    displayText.innerHTML = "Choose Sort Type";
                                     displayText.classList.remove("active");
-                                    console.log(sortTypeBtn);
-                                    
                                     sortTypeBtn.getElementsByClassName("over")[0].classList.remove("over");
                                 }
                                 
@@ -369,6 +370,7 @@ window.onload =  (function (doc) {
                           data = ev.dataTransfer.getData("text"),
                           card = system.utils.getNamedObj(data),
                           hook = ev.target,
+                          targetSortCard = system.utils.getNamedObj(hook.getAttribute("data-appendto")),
                           sortName = system.utils.getNamedObj(hook.getAttribute("data-appendto"), system.wireframe).val_1,
                           sortLev = sortTable.querySelector("#" + sortName.replace(/ /g, "_")),
                           li = system.utils.createNode("li");
@@ -376,9 +378,11 @@ window.onload =  (function (doc) {
                     li.innerHTML = "<span class='compTitle'>" + card.title + "</span>&nbsp;<span class='compRef'>" + card.cardFieldData.cardRef + "</span>";
 
                     sortLev.appendChild(li);
-                    card.card.style.top = "122px";
+                    card.pos.cords = [targetSortCard.pos.x - , targetSortCard.pos.y];
+//                    card.card.style.top = "122px";
                     card.card.style.zIndex = "20";
-                    hook.appendChild(card.card);
+//                    hook.appendChild(card.card);
+                    
                     ev.preventDefault();
                 },
 

@@ -1,6 +1,6 @@
 
 $shl_Grey: #5B6770;
-$speedFact: 1;
+$speedFact: 0.1;
 
 $cardWidth: 218px;
 $cardHeight: 122px;
@@ -35,7 +35,7 @@ body {
     }
     
     main{
-        height: 1080px;
+        height: 920px;
         max-height: inherit;
         width: 1920px;
         max-width: inherit;
