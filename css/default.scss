@@ -1,11 +1,12 @@
 
 $shl_Grey: #5B6770;
-$speedFact: 0.1;
+$speedFact: 1;
 
 $cardWidth: 218px;
 $cardHeight: 122px;
 $gridGap: 16px;
 $menuHeight: 560px;
+$cardCollapsSpeed: 1s;
 
 @keyframes intro {
         
@@ -29,6 +30,7 @@ $menuHeight: 560px;
 
 body {
     font-family: sans-serif;
+    background: darkgray;
     
     #cardTemplates {
         display: none;
@@ -76,8 +78,6 @@ body {
                 content: ">>";
                 text-align: center;
                 line-height: 36px;
-                
-//                vertical-align:text-bottom;
                 position:absolute;
                 display: block;
                 top: -50px;
@@ -87,10 +87,6 @@ body {
                 height:50px;
                 background: $shl_Grey;
                 background-size: 100%;
-                
-//                padding: 20px;
-//                border: 1px solid $shl_Grey;
-                    
             }
             
             > *{
@@ -118,7 +114,6 @@ body {
                     margin-bottom: 0.6em;
                     .compTitle{
                         font-weight: 500;
-                        
                     }
                     .compRef{
                         font-weight: 200;
@@ -145,7 +140,8 @@ body {
                 left: -360px;
                 top: -240px;
                 text-align: center;
-                transition: opacity 1.2s;
+                transition: opacity 1.2s * $speedFact;
+                
                 h1{
                     color: $shl_Grey;
                 }
@@ -153,17 +149,19 @@ body {
                 h1, span {
                    color: $shl_Grey;
                     opacity: 0;
-                    animation: 2.5s ease-out 1 forwards awsomeTitle;
+                    animation: 2.5s * $speedFact ease-out 1 forwards awsomeTitle;
                 }
+                
                 span:nth-child(1){
-
-                    animation-delay: 2s;
+                    animation-delay: 2s * $speedFact;
                 }
+                
                 span:nth-child(2){
-                    animation-delay: 3s;
+                    animation-delay: 3s * $speedFact
                 }
+                
             }
-
+            
             #UCF_deck{
                 position: absolute;
                 top: -200px;
@@ -173,10 +171,10 @@ body {
                 #UCF{
                     //------ The Opacity set to zero Intatly to aviod the uformated flash
                     opacity: 0;
-                    animation: 0.85s cubic-bezier(.13,.68,.33,1) 4.5s 1 normal forwards intro;
-                    animation-delay: 4s;
+                    animation: 0.85s * $speedFact cubic-bezier(.13,.68,.33,1) 4.5s * $speedFact 1 normal forwards intro;
+                    animation-delay: 4s * $speedFact;
                     cursor: pointer;
-                    
+    
                     img{
 //                        height: $cardWidth;
 //                        width: $cardWidth;
@@ -189,8 +187,8 @@ body {
                     
                     &.initalSize{
                         opacity: 1;
-                        transition: opacity 1s;
-                        animation: 0.7s ease-in-out 0s 1 normal forwards resize;
+                        transition: opacity 1s * $speedFact;
+                        animation: 0.7s* $speedFact ease-in-out 0s 1 normal forwards resize;
                             & + svg{
                                 opacity: 1;
                                 transform: scale(1);
@@ -210,7 +208,7 @@ body {
                 svg#sortChoose{
                     z-index: -1;
                     transform: scale(0.3);
-                    transition: all 0.7s;
+                    transition: all 0.7s * $speedFact;
                     opacity:0;
                     .sortTypeHead{
                         font-size: 1em;
@@ -223,21 +221,19 @@ body {
                         }
                     }
                     .sortTypeLable{
-                        font-size: 1.02em;
-                        
+                        font-size: 1.02em;  
                     }
                     .sortType{
                         g g {
                             cursor: pointer;
                             circle{
-                                transition: fill 0.3s;
+                                transition: fill 0.3s * $speedFact;
                                 fill: #78D64B;
                                 
                                 &.over{
                                     fill: #5B6770;
                                 }
                             }
-                            
                         }
                     } 
                 }
@@ -251,13 +247,15 @@ body {
                     &.startHidden{
                          display: none;
                     }
-                    
                 }
                 
                 #UCF_CompCards{
                     .dimentionCard{
                         cursor: pointer;
 //                        border: 4px solid red;
+                    }
+                    .zoomUp{
+                        transform: scale(2);
                     }
                 }
                    
@@ -267,30 +265,113 @@ body {
                     position: absolute;
                     top: -$cardHeight/2 + 200px;
                     right: -$cardWidth/2 + 200px;
-//                  box-shadow: 8px 15px 39px -6px rgba(148,155,161,0.65);
+                    transition: height 1s * $speedFact;
+                    //box-shadow: 8px 15px 39px -6px rgba(148,155,161,0.65);
 
                     
                     &.sortCard {
                          // transitions
                        transition-property: top, right;
-                        transition-duration: 1s, 0.6s;
-                        transition-delay:0s, 0.7s;
+                        transition-duration: 1s * $speedFact, 0.6s * $speedFact;
+                        transition-delay:0s, 0.7s * $speedFact;
                     }
                     &.factorCard, &.dimentionCard{
                         transition-property: right, top;
-                        transition-duration: 1.2s, 0.6s;
-                        transition-delay: 1.5s, 2.5s;
+                        transition-duration: 1.2s * $speedFact, 0.6s * $speedFact;
+                        transition-delay: 1.5s * $speedFact, 2.5s * $speedFact;
+                        &.aniOff{
+                            transition-property: height;
+                            transition-duration: $cardCollapsSpeed * $speedFact;
+                            transition-delay: 0s !important;
+                            height: 28px;
+                        }
+                        &.dragging{
+                            
+                            
+                        }
                     }
 
                     div{
                         position: absolute;
                         .title {
                             font-size: 0.8em;
-                            margin: 0.6em 0;
+                            margin: 0.67em 0;
                         }
 
                         >*{
                             padding: 0 0.6em;
+                        }
+                        
+                        .cardCtrl {
+                            padding: 0;
+                            position: absolute;
+                            width: 30px;
+                            height: 30px;
+                            z-index: 10;
+                            right: 2px;
+                            top: 0;
+                            &:hover {
+                                #menuIcon #enCircle circle{
+                                    fill: rgba(255,255,255,0.3);
+                                }
+                                .menu{
+                                    display: block;
+                                    right: 6px;
+                                }
+                            }
+                            .menu{
+                                position: absolute;
+                                right: -86px;
+                                top:28px;
+                                z-index: 20;
+                                display: block;
+                                width: 80px;
+                                background: rgba(255,255,255,0.8);
+                                padding: 8px 0;
+                                margin: 0;
+                                display: none;
+                                border: 1px solid #666;
+                                &:hover {
+                                    display: block;
+                                    right: 6px;
+                                }
+                                    li{
+                                        display: block;
+                                        font-size: 0.8em;
+                                        padding: 4px 8px;
+                                        &:hover{
+                                            background: pink;  
+                                        }
+                                    }
+                                }
+                            #menuIcon{
+                                height: 100%;
+                                width: 100%;
+                                #enCircle {
+                                    circle{
+                                        fill:transparent;    
+                                    }
+                                }
+                                #iconFigure{
+                                    circle{
+                                        fill:#fff;
+                                    }
+                                }   
+                            }
+                            
+                            article {
+                                position: absolute;
+                                z-index: 10;
+                                top: 0;
+                                color: #fff;
+                                padding: 0.3em 0.6em;
+                                &.reset{
+                                    right:0;
+                                }
+                                &.zoom{
+                                    right: 2em;
+                                }
+                            }
                         }
 
                         &.factorColfill{
@@ -301,6 +382,13 @@ body {
                             }
                         }
                         &.cardBodyText{
+                            height: auto;
+                            overflow: hidden;
+                            transition: height $cardCollapsSpeed * $speedFact;
+                            &.selected{
+                                height: 0;
+                                
+                            }
 
                             p.description{
                                 margin: 0.6em 0;
@@ -317,13 +405,13 @@ body {
                                 p.cardRef{ width: 14px; text-align: right;}
                                 p.sortType{ width: 200px; text-align: center;}
                             }
-
                         }
                     }
 
                     &.sortCard, &.factorCard, &.dimentionCard{
                         border: 1px solid #000; 
                         border-radius: 3px;
+                        background: transparent;
                     }
 
                     // HTML Card css test
@@ -347,7 +435,6 @@ body {
                                 justify-content: center;
                                 width: 100%;
                                 left: -$gridGap/2;
-
                                 > *{
                                     //flex-basis: auto;
                                     margin: 0.6em 0;
@@ -359,21 +446,19 @@ body {
                             display: none;
                              width: 10px;
                              padding: 0;
-                             //flex-basis: 0;
                              font-weight: 200;
                         }
                         .reciver{
                              padding: 0;
                             margin: 0;
-                                position: relative;
-                                width: $cardWidth;
-                                height: 100%;
-                                background: transparent;
+                            position: relative;
+                            width: $cardWidth;
+                            height: 100%;
+                            background: transparent;
                         .cardBlock{
                             padding: 0;
                             margin: 0;
                             position: relative;
-
                             top:  $cardHeight;
                             left: -1px;
                             }
@@ -409,6 +494,7 @@ body {
                              bottom: 4px;
                         }
                     }
+                    
                 }
             }
         }

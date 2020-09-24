@@ -8,7 +8,7 @@
 
 <body>
     <main>
-<!--        <h1>UCF Card Deck</h1>-->
+
         <section id="popUpPanel">
           <div id="sortResults">
              <h3>Table of Sorted Competencies</h3>
@@ -56,6 +56,36 @@
         <article class="cardBlock dimentionCard" id="dimentionCard" draggable="true" >
             <div class="factorColfill" >
                 <h3 class="title">Factor Title</h3>
+                <section class="cardCtrl">
+                  <svg id="menuIcon" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+	 viewBox="0 0 280 280" >
+
+                <g id="enCircle">
+                    <circle cx="170" cy="120" r="100"/>
+                </g>
+                <g id="iconFigure">
+                    <g>
+                        <circle cx="170" cy="70" r="17"/>
+                    </g>
+                    <g>
+                        <circle cx="170" cy="170" r="17"/>
+                    </g>
+                    <g>
+                        <circle cx="170" cy="120" r="17"/>
+                    </g>
+                </g>
+                </svg>
+                  <ul class="menu">
+                      <li>Zoom&nbsp;Card</li>
+                      <li>Deselect</li>
+                  </ul>
+                   
+                   
+<!--
+                    <article class="zoom">z</article>
+                    <article class="reset">r</article>
+-->
+                </section>
             </div>
 
             <div class="cardBodyText">
@@ -74,7 +104,7 @@
             <defs>
                 <path d="M -220,0 
                 a 220 220 0, 1, 1, 440 0" id="textPath"/>
-<!--                <path d="M-200,0a200,200 0 1,0 400,0a200,200 0 1,0 -400,0" id="textPath"/>-->
+                <path d="M-200,0a200,200 0 1,0 400,0a200,200 0 1,0 -400,0" id="textPath"/>
             </defs>
            
             <circle cx="0" cy="0" r="190" fill="none" stroke="#78D64B" stroke-width="3" />
@@ -86,22 +116,7 @@
             
             
             </text>
-<!--
-            <text class="sortTypeHead" text-anchor="middle">
-                <textPath xlink:href="#textPath" startOffset="50%">
-                Choose Sort Type
-                </textPath>
-            
-            </text>
--->
-            <!--
-            <g id="sortButtons">
-            <circle id="FrequencySort_b" cx="50%" cy="50%" r="6" fill="red" transform = "translate(0,-50) rotate(45,109,111)" />
-            <circle id="ComplexitySort_b" cx="50%" cy="50%" r="6" fill="red" transform = "translate(0,-50) rotate(-45,109,111)" />
-            <circle id="ImportanceSort_b" cx="50%" cy="50%" r="6" fill="red" transform = "translate(0,-50) rotate(15,109,111)" />
-            <circle id="AssessmentSort" cx="50%" cy="50%" r="6" fill="red" transform = "translate(0,-50) rotate(-15,109,111)" />
-            </g>
-            -->
+
             <g class="FrequencySort sortType"  >
                 <g transform = "rotate(60,0,0)">
                     <g transform = "translate(0,-190)" data-sorttype="FrequencySort">

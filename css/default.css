@@ -40,6 +40,7 @@
 }
 body {
   font-family: sans-serif;
+  background: darkgray;
 }
 body #cardTemplates {
   display: none;
@@ -226,12 +227,16 @@ body main #origin #UCF_deck #UCF_SortCards.startHidden, body main #origin #UCF_d
 body main #origin #UCF_deck #UCF_CompCards .dimentionCard {
   cursor: pointer;
 }
+body main #origin #UCF_deck #UCF_CompCards .zoomUp {
+  transform: scale(2);
+}
 body main #origin #UCF_deck .cardBlock {
   width: 218px;
   height: 122px;
   position: absolute;
   top: 139px;
   right: 91px;
+  transition: height 1s;
 }
 body main #origin #UCF_deck .cardBlock.sortCard {
   transition-property: top, right;
@@ -243,15 +248,85 @@ body main #origin #UCF_deck .cardBlock.factorCard, body main #origin #UCF_deck .
   transition-duration: 1.2s, 0.6s;
   transition-delay: 1.5s, 2.5s;
 }
+body main #origin #UCF_deck .cardBlock.factorCard.aniOff, body main #origin #UCF_deck .cardBlock.dimentionCard.aniOff {
+  transition-property: height;
+  transition-duration: 1s;
+  transition-delay: 0s !important;
+  height: 28px;
+}
 body main #origin #UCF_deck .cardBlock div {
   position: absolute;
 }
 body main #origin #UCF_deck .cardBlock div .title {
   font-size: 0.8em;
-  margin: 0.6em 0;
+  margin: 0.67em 0;
 }
 body main #origin #UCF_deck .cardBlock div > * {
   padding: 0 0.6em;
+}
+body main #origin #UCF_deck .cardBlock div .cardCtrl {
+  padding: 0;
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  z-index: 10;
+  right: 2px;
+  top: 0;
+}
+body main #origin #UCF_deck .cardBlock div .cardCtrl:hover #menuIcon #enCircle circle {
+  fill: rgba(255, 255, 255, 0.3);
+}
+body main #origin #UCF_deck .cardBlock div .cardCtrl:hover .menu {
+  display: block;
+  right: 6px;
+}
+body main #origin #UCF_deck .cardBlock div .cardCtrl .menu {
+  position: absolute;
+  right: -86px;
+  top: 28px;
+  z-index: 20;
+  display: block;
+  width: 80px;
+  background: rgba(255, 255, 255, 0.8);
+  padding: 8px 0;
+  margin: 0;
+  display: none;
+  border: 1px solid #666;
+}
+body main #origin #UCF_deck .cardBlock div .cardCtrl .menu:hover {
+  display: block;
+  right: 6px;
+}
+body main #origin #UCF_deck .cardBlock div .cardCtrl .menu li {
+  display: block;
+  font-size: 0.8em;
+  padding: 4px 8px;
+}
+body main #origin #UCF_deck .cardBlock div .cardCtrl .menu li:hover {
+  background: pink;
+}
+body main #origin #UCF_deck .cardBlock div .cardCtrl #menuIcon {
+  height: 100%;
+  width: 100%;
+}
+body main #origin #UCF_deck .cardBlock div .cardCtrl #menuIcon #enCircle circle {
+  fill: transparent;
+}
+body main #origin #UCF_deck .cardBlock div .cardCtrl #menuIcon #iconFigure circle {
+  fill: #fff;
+}
+body main #origin #UCF_deck .cardBlock div .cardCtrl article {
+  position: absolute;
+  z-index: 10;
+  top: 0;
+  color: #fff;
+  padding: 0.3em 0.6em;
+}
+body main #origin #UCF_deck .cardBlock div .cardCtrl article.reset {
+  right: 0;
+}
+body main #origin #UCF_deck .cardBlock div .cardCtrl article.zoom {
+  right: 2em;
 }
 body main #origin #UCF_deck .cardBlock div.factorColfill {
   width: 100%;
@@ -259,6 +334,14 @@ body main #origin #UCF_deck .cardBlock div.factorColfill {
 body main #origin #UCF_deck .cardBlock div.factorColfill h3 {
   color: #fff;
   font-size: 0.7em;
+}
+body main #origin #UCF_deck .cardBlock div.cardBodyText {
+  height: auto;
+  overflow: hidden;
+  transition: height 1s;
+}
+body main #origin #UCF_deck .cardBlock div.cardBodyText.selected {
+  height: 0;
 }
 body main #origin #UCF_deck .cardBlock div.cardBodyText p.description {
   margin: 0.6em 0;
@@ -286,6 +369,7 @@ body main #origin #UCF_deck .cardBlock div.cardBodyText footer p.sortType {
 body main #origin #UCF_deck .cardBlock.sortCard, body main #origin #UCF_deck .cardBlock.factorCard, body main #origin #UCF_deck .cardBlock.dimentionCard {
   border: 1px solid #000;
   border-radius: 3px;
+  background: transparent;
 }
 body main #origin #UCF_deck .cardBlock.sortCard .factorColfill {
   background: #aaa;
